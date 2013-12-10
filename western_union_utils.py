@@ -1,6 +1,9 @@
 __author__ = 'salmantariqmirza'
 
 import urllib, urllib2, json, time
+
+# Function to extract the exchange rate for a country
+# @params country, a string representing the target country
 def get_exchange_rate(country):
      # Create get request for exchange rate as json
     action = 'https://www.westernunion.com/ajaxHandler/service/getDelvryOptAndCurrency/?'
@@ -19,9 +22,4 @@ def get_exchange_rate(country):
     response = urllib2.urlopen(req)  # Perform request
     json_result = json.loads(response.read())  # Load json result into an object
     rate = json_result["update"]["conversion"]["targetAmount"]
-
-    current_date = time.strftime("%d/%m/%Y")
-    current_time = time.strftime("%H:%M:%S")
-    today = "{0} {1}".format(current_date,current_time)
-
-    return "{0},{1},{2}".format(today, country, rate)
+    return rate
