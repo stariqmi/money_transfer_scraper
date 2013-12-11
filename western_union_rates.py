@@ -15,5 +15,4 @@ for country in countries:
     rate_str = "{0},{1},{2}".format(today, country, rate)
     print(rate_str)
     csv.write(rate_str + "\n")
-    time.sleep(5)
 csv.close()

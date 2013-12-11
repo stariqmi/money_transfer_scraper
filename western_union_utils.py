@@ -1,9 +1,13 @@
 __author__ = 'salmantariqmirza'
 
-import urllib, urllib2, json, time
+import json, requests, lxml.html
+
+
 
 # Function to extract the exchange rate for a country
 # @params country, a string representing the target country
+
+
 def get_exchange_rate(country):
      # Create get request for exchange rate as json
     action = 'https://www.westernunion.com/ajaxHandler/service/getDelvryOptAndCurrency/?'
@@ -13,13 +17,53 @@ def get_exchange_rate(country):
     query["targetCountry"] = country    # Request for specific country
     query["originCurrency"] = "USD"
     query["senderZipCode"] = "91025"
-    data = urllib.urlencode(query)  # Encode for urls
-    req = urllib2.Request(action + data)  # Create request object with action and query params
-    req.add_header("Referer", "http://www.westernunion.com/Home")
-    req.add_header("User-agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36\
-    (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36")
-
-    response = urllib2.urlopen(req)  # Perform request
-    json_result = json.loads(response.read())  # Load json result into an object
+    req = requests.get(action, params=query)
+    json_result = json.loads(req.text)  # Load json result into an object
     rate = json_result["update"]["conversion"]["targetAmount"]
     return rate
+
+
+def get_services_fees(country, cookie_dict):
+
+    req = requests.get('http://www.westernunion.com/WUCOMWEB/shoppingAreaAction.do?method=load&nextSecurePage=Y', cookies=cookie_dict)
+    ep_html = open("estimate_price.html", "w")
+    ep_html.write(req.text.encode("utf-8"))
+    ep_html.close()
+
+    ep_lxml = lxml.html.parse("estimate_price.html")
+    meta_tags = ep_lxml.xpath("//meta")
+    ref_id = ""
+    for tag in meta_tags:
+        content = tag.get("content")
+        if not content == None:
+            if content.find("REF_ID=") != -1:
+                ref_id = content.split("REF_ID=")[1]
+
+    rate = get_exchange_rate(country[0])
+
+    params = {}
+    params["body_tag:destination_country_iso_code"] = country[0]
+    params["body_tag:delivery_options"] = "000"
+    params["body_tag:price_estimate_zip:postal_code"] = "91025"
+    params["body_tag:principal_amount"] = "200"
+    params["body_tag:conversion_principal_amount"] = rate
+    params["body_tag:conversion_principal_amount_currency"] = country[1]
+    params["body_tag:estimate_price_send_money"] = "Get Started"
+    params["REF_ID"] = ref_id
+    params["analyticsevents"] = ""
+    params["form_tracker"] = "destination_country_iso_code,delivery_options,postal_code,principal_amount,conversion_principal_amount,conversion_principal_amount_currency,estimate_price_send_money"
+
+    post_req = requests.post("https://www.westernunion.com/price-estimator/continue", params=params, cookies=cookie_dict)
+    fees_html = open("fees_page.html","w")
+    fees_html.write(post_req.text.encode("utf-8"))
+    fees_html.close()
+
+    fees_lxml = lxml.html.parse("fees_page.html")
+    service_list = fees_lxml.xpath('//li[@id="services_list_online"]')
+    for service in service_list:
+
+        #Code in progress, extract the relevant data
+
+        print service.xpath('//div[@class="available"]/div/p')
+        #print service.xpath('//span[@wicket:id="payment_type"]')
+        #print service.xpath('//span[@wicket:id="charge"]').text
