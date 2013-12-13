@@ -63,7 +63,7 @@ def get_services_fees(country, cookie_dict):
     for service in service_list:
 
         #Code in progress, extract the relevant data
-
-        print service.xpath('//div[@class="available"]/div/p')
+        print "service ..."
+        #print service.xpath('//div[@class="available"]/div/p')
         #print service.xpath('//span[@wicket:id="payment_type"]')
         #print service.xpath('//span[@wicket:id="charge"]').text
