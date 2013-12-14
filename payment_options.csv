@@ -1,0 +1,28 @@
+PK,Bank payment through WU,3 days,200.00 USD,5.00 USD
+PK,Credit/debit card,In minutes,200.00 USD,10.00 USD
+PK,Bank transfer,3 days,200.00 USD,5.00 USD
+IN,Credit/debit card,In minutes,200.00 USD,8.00 USD
+IN,Bank transfer,3 days,200.00 USD,5.00 USD
+IN,Bank payment through WU,3 days,200.00 USD,5.00 USD
+CN,Bank payment through WU,3 days,200.00 USD,10.00 USD
+CN,Credit/debit card,In minutes,200.00 USD,15.00 USD
+CN,Bank transfer,3 days,200.00 USD,10.00 USD
+NG,Bank payment through WU,3 days,200.00 USD,10.00 USD
+NG,Credit/debit card,In minutes,200.00 USD,15.00 USD
+NG,Bank transfer,3 days,200.00 USD,10.00 USD
+PH,Bank payment through WU,3 days,200.00 USD,0.00 USD
+PH,Credit/debit card,In minutes,200.00 USD,5.00 USD
+PH,Bank transfer,3 days,200.00 USD,0.00 USD
+ID,Bank payment through WU,3 days,200.00 USD,10.00 USD
+ID,Credit/debit card,In minutes,200.00 USD,15.00 USD
+ID,Bank transfer,3 days,200.00 USD,10.00 USD
+MX,Credit/debit card,In minutes,200.00 USD,5.00 USD
+MX,Bank transfer,3 days,200.00 USD,4.00 USD
+MX,Bank payment through WU,3 days,200.00 USD,4.00 USD
+GH,Bank payment through WU,3 days,200.00 USD,10.00 USD
+GH,Credit/debit card,In minutes,200.00 USD,15.00 USD
+GH,Bank transfer,3 days,200.00 USD,10.00 USD
+SO,Bank payment through WU,2 to 5 days,200.00 USD,10.00 USD
+SO,Credit/debit card,In minutes,200.00 USD,15.00 USD
+SO,Bank transfer,3 days,200.00 USD,10.00 USD
+ET,Credit/debit card,In minutes,200.00 USD,15.00 USD

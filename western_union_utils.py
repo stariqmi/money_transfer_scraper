@@ -3,7 +3,6 @@ __author__ = 'salmantariqmirza'
 import json, requests, lxml.html
 
 
-
 # Function to extract the exchange rate for a country
 # @params country, a string representing the target country
 
@@ -59,11 +58,16 @@ def get_services_fees(country, cookie_dict):
     fees_html.close()
 
     fees_lxml = lxml.html.parse("fees_page.html")
-    service_list = fees_lxml.xpath('//li[@id="services_list_online"]')
+    service_list = fees_lxml.xpath('//ul[@id="tab_send_online_ul"]/li[@class="option"]/div[@class="row clearfix"]')
+    payment_methods = []
     for service in service_list:
 
         #Code in progress, extract the relevant data
-        print "service ..."
-        #print service.xpath('//div[@class="available"]/div/p')
-        #print service.xpath('//span[@wicket:id="payment_type"]')
-        #print service.xpath('//span[@wicket:id="charge"]').text
+        payment = {}
+        payment["method"] = service.xpath('./div[@class="twocol"]/p')[0].text
+        payment["time"] = service.xpath('./div[@class="available"]/div/p')[0].text
+        payment["amount"] = service.xpath('./div[@class="amount"]/p/span')[0].text + " " + service.xpath('./div[@class="amount"]/p/span')[1].text
+        payment["fee"] = service.xpath('./div[@class="fee"]/p/span')[0].text + " " + service.xpath('./div[@class="fee"]/p/span')[1].text
+        print payment
+        payment_methods.append(payment)
+    return payment_methods
