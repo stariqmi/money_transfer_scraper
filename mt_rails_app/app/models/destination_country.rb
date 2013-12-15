@@ -1,3 +1,3 @@
 class DestinationCountry < ActiveRecord::Base
-	has_one :fx_rate
+	validates :abbreviation, uniqueness: true
 end

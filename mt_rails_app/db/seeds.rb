@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-destinations = [["TZ", "Thailand"],
+destinations = [["TH", "Thailand"],
 				["CN", "China"],
 				["PK", "Pakistan"],
 				["NG", "Nigeria"],
@@ -29,4 +29,9 @@ end
 payment_methods = ["Bank Tarnsfer through WU", "Credit/Debit", "Bank Transfer"]
 payment_methods.each do |method|
 	PaymentMethod.create({method: method})
+end
+
+receive_methods = ["Cash at Agent Location"]
+receive_methods.each do |method|
+	ReceiveMethod.create({method: method})
 end

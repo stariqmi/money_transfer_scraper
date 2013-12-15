@@ -28,17 +28,13 @@ countries = [["PK", "PKR"],
             ["ET", "ETB"]
     ]
 
-current_date = time.strftime("%d/%m/%Y")
-current_time = time.strftime("%H:%M:%S")
-today = "{0} {1}".format(current_date,current_time)
-
-payment_options_file = open("western_fees.csv","w")
+payment_options_file = open("mt_rails_app/lib/assets/rates/western_union_fees.csv","w")
 for country in countries:
 
     payment_options = get_services_fees(country, cookie_dict)
 
     for option in payment_options:
-        payment_str = "{0},{1},{2},{3},{4},{5}".format(today, country[0], option["method"], option["time"], option["amount"], option["fee"])
+        payment_str = "{0},{1},{2},{3},{4}".format(country[0], option["method"], option["time"], option["amount"], option["fee"])
         payment_options_file.write(payment_str + "\n")
 
 payment_options_file.close()

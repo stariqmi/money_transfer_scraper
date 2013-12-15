@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215070235) do
+ActiveRecord::Schema.define(version: 20131215083658) do
 
   create_table "destination_countries", force: true do |t|
     t.string   "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131215070235) do
 
   create_table "fx_rates", force: true do |t|
     t.integer  "operator_id"
-    t.integer  "destination_id"
+    t.integer  "destination_country_id"
     t.integer  "payment_method_id"
     t.integer  "receive_method_id"
     t.decimal  "rate"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20131215070235) do
     t.datetime "updated_at"
   end
 
-  add_index "fx_rates", ["destination_id"], name: "index_fx_rates_on_destination_id"
+  add_index "fx_rates", ["destination_country_id"], name: "index_fx_rates_on_destination_country_id"
   add_index "fx_rates", ["operator_id"], name: "index_fx_rates_on_operator_id"
   add_index "fx_rates", ["payment_method_id"], name: "index_fx_rates_on_payment_method_id"
   add_index "fx_rates", ["receive_method_id"], name: "index_fx_rates_on_receive_method_id"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20131215070235) do
   end
 
   create_table "payment_methods", force: true do |t|
+    t.string   "method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "receive_methods", force: true do |t|
     t.string   "method"
     t.datetime "created_at"
     t.datetime "updated_at"

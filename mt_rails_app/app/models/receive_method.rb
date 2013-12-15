@@ -1,3 +1,3 @@
-class PaymentMethod < ActiveRecord::Base
+class ReceiveMethod < ActiveRecord::Base
 	validates :method, uniqueness: true
 end

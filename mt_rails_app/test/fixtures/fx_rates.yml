@@ -2,16 +2,16 @@
 
 one:
   operator_id: 
-  destination_id: 
+  destination_country_id: 
   payment_method_id: 
   receive_method_id: 
   rate: 9.99
-  timestamp: 2013-12-14 23:02:35
+  timestamp: 2013-12-15 00:36:58
 
 two:
   operator_id: 
-  destination_id: 
+  destination_country_id: 
   payment_method_id: 
   receive_method_id: 
   rate: 9.99
-  timestamp: 2013-12-14 23:02:35
+  timestamp: 2013-12-15 00:36:58

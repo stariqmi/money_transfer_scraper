@@ -1,3 +1,3 @@
 class Operator < ActiveRecord::Base
-	has_one :fx_rate
+	validates :name, uniqueness: true
 end
