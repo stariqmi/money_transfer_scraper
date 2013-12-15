@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  operator_id: 
+  destination_id: 
+  payment_method_id: 
+  receive_method_id: 
+  rate: 9.99
+  timestamp: 2013-12-14 23:02:35
+
+two:
+  operator_id: 
+  destination_id: 
+  payment_method_id: 
+  receive_method_id: 
+  rate: 9.99
+  timestamp: 2013-12-14 23:02:35
