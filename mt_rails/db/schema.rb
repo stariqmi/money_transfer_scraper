@@ -11,11 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214095741) do
+ActiveRecord::Schema.define(version: 20131215055451) do
+
+  create_table "destination_countries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "abbrevitaion"
+  end
+
+  create_table "fx_rates", force: true do |t|
+    t.decimal  "rate"
+    t.datetime "timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "operators", force: true do |t|
     t.string   "name"
     t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payment_methods", force: true do |t|
+    t.string   "method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.string   "method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "receive_methods", force: true do |t|
+    t.string   "method"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "send_amounts", force: true do |t|
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
