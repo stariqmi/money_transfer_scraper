@@ -22,7 +22,7 @@ def get_exchange_rate(country):
     return rate
 
 
-def get_services_fees(country, cookie_dict):
+def get_services_fees(country, cookie_dict, send_amount):
 
     req = requests.get('http://www.westernunion.com/WUCOMWEB/shoppingAreaAction.do?method=load&nextSecurePage=Y', cookies=cookie_dict)
     ep_html = open("estimate_price.html", "w")
@@ -44,7 +44,7 @@ def get_services_fees(country, cookie_dict):
     params["body_tag:destination_country_iso_code"] = country[0]
     params["body_tag:delivery_options"] = "000"
     params["body_tag:price_estimate_zip:postal_code"] = "91025"
-    params["body_tag:principal_amount"] = "200"
+    params["body_tag:principal_amount"] = send_amount
     params["body_tag:conversion_principal_amount"] = rate
     params["body_tag:conversion_principal_amount_currency"] = country[1]
     params["body_tag:estimate_price_send_money"] = "Get Started"
