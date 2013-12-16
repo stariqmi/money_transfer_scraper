@@ -1,0 +1,19 @@
+<h1><%= @operator_name %> Rates</h1>
+<p>Total: <%= @rates.count %></p>
+
+<table>
+	<tbody>
+	<tr>
+		<td>Country</td>
+		<td>Rate</td>
+		<td>Time</td>
+	</tr>
+	<% @rates.each do |rate| %>
+		<tr>
+			<td><%= rate.destination_country.name %></td>
+			<td><%= rate.rate %></td>
+			<td><%= rate.timestamp %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  send_amount_id: 
+  operator_id: 
+  destination_country_id: 
+  payment_method_id: 
+  receive_method_id: 
+  fee: 9.99
+  timestamp: 2013-12-15 22:33:36
+
+two:
+  send_amount_id: 
+  operator_id: 
+  destination_country_id: 
+  payment_method_id: 
+  receive_method_id: 
+  fee: 9.99
+  timestamp: 2013-12-15 22:33:36

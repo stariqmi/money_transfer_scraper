@@ -1,0 +1,25 @@
+<h1><%= @operator_name %> Rates</h1>
+<p>Total: <%= @fees.count %></p>
+
+<table>
+	<tbody>
+	<tr>
+		<td>Country</td>
+		<td>Fee</td>
+		<td>Send Amount</td>
+		<td>Delivery Time</td>
+		<td>Payment Method</td>
+		<td>Time</td>
+	</tr>
+	<% @fees.each do |fee| %>
+		<tr>
+			<td><%= fee.destination_country.name %></td>
+			<td><%= fee.fee %></td>
+			<td><%= fee.send_amount.amount %></td>
+			<td><%= fee.time_estimate %></td>
+			<td><%= fee.payment_method.method %></td>
+			<td><%= fee.timestamp %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

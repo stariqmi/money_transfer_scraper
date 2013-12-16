@@ -26,7 +26,7 @@ operators.each do |op|
 	Operator.create({name: op[0], website: op[1]})
 end
 
-payment_methods = ["Bank Tarnsfer through WU", "Credit/Debit", "Bank Transfer"]
+payment_methods = ["Bank payment through WU", "Credit/debit card", "Bank transfer"]
 payment_methods.each do |method|
 	PaymentMethod.create({method: method})
 end
@@ -34,4 +34,9 @@ end
 receive_methods = ["Cash at Agent Location"]
 receive_methods.each do |method|
 	ReceiveMethod.create({method: method})
+end
+
+send_amounts = [100.00, 200.00, 300.00, 400.00, 500.00]
+send_amounts.each do |amt|
+	SendAmount.create({amount: amt})
 end
