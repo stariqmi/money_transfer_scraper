@@ -17,7 +17,7 @@ for cookie in cookies:
 
 countries = [["PK", "PKR"],
             ["IN", "INR"],
-            ["TZ", "THB"],
+            ["TH", "THB"],
             ["CN", "CNY"],
             ["NG", "NGN"],
             ["PH", "PHP"],
@@ -28,13 +28,18 @@ countries = [["PK", "PKR"],
             ["ET", "ETB"]
     ]
 
+send_amounts = ["100", "200", "300", "400", "500"]
+
 payment_options_file = open("mt_rails_app/lib/assets/rates/western_union_fees.csv","w")
 for country in countries:
+    for send_amount in send_amounts:
+        print "Country: {0}, Amount: {1}".format(country, send_amount)
+        payment_options = get_services_fees(country, cookie_dict, send_amount)
 
-    payment_options = get_services_fees(country, cookie_dict)
-
-    for option in payment_options:
-        payment_str = "{0},{1},{2},{3},{4}".format(country[0], option["method"], option["time"], option["amount"], option["fee"])
-        payment_options_file.write(payment_str + "\n")
+        for option in payment_options:
+            payment_str = "{0},{1},{2},{3},{4}".format(country[0], option["method"], option["time"], option["amount"], option["fee"])
+            payment_options_file.write(payment_str + "\n")
+        print "sleeping for 5 seconds ... "
+        time.sleep(5)
 
 payment_options_file.close()
