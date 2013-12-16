@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1def7dc-b1e1-444d-a831-22319d80f954" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mt_rails_app/lib/tasks/western_union.rake" afterPath="$PROJECT_DIR$/mt_rails_app/lib/tasks/western_union.rake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mt_rails_app/config/routes.rb" afterPath="$PROJECT_DIR$/mt_rails_app/config/routes.rb" />
     </list>
     <ignored path="money_transfer_scraper.iws" />
     <ignored path=".idea/workspace.xml" />
