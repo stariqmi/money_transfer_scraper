@@ -47,3 +47,5 @@ end
 # Want to be able to deploy easily to EC2
 gem 'capistrano'
 gem 'capistrano-ext'
+
+gem 'therubyracer'

@@ -1,6 +1,17 @@
 namespace :western_union do
   desc "Parse Western Union Fees"
   task fees: :environment do
+    operators = Operator.where(name: "Western Union")
+    File.open("#{Rails.root}/lib/assets/rates/western_union_fees.csv").each do |line|
+      data = line.split(",")
+      destinations = DestinationCountry.where(abbreviation: data[0])
+      payment_methods = PaymentMethod.where(method: data[1])
+      send_amounts = SendAmount.where(amount: data[3].split(" ")[0].to_f)
+      parsed_fee = data[-1].split(" ")[0].to_f
+      fee = FxFee.create({fee: parsed_fee, timestamp: DateTime.now, operator_id: operators[0].id, 
+                          destination_country_id: destinations[0].id, receive_method_id: 1, send_amount_id: send_amounts[0].id})
+      puts fee.inspect
+    end
   end
 
   desc "Parse Western Union Rates"
@@ -18,12 +29,21 @@ namespace :western_union do
   end
 
   desc "Destroy all Western Union Rates records"
-  task destroy: :environment do
+  task destroy_rates: :environment do
   	FxRate.all.each do |rate|
   		if rate.operator.name == "Western Union"
   			rate.delete
   		end
   	end
+  end
+
+  desc "Destroy all Western Union Fees records"
+  task destroy_fees: :environment do
+    FxFee.all.each do |fee|
+      if fee.operator.name == "Western Union"
+        fee.delete
+      end
+    end
   end
 
 end
