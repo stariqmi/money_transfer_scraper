@@ -9,7 +9,9 @@ namespace :western_union do
       send_amounts = SendAmount.where(amount: data[3].split(" ")[0].to_f)
       parsed_fee = data[-1].split(" ")[0].to_f
       fee = FxFee.create({fee: parsed_fee, timestamp: DateTime.now, operator_id: operators[0].id, 
-                          destination_country_id: destinations[0].id, receive_method_id: 1, send_amount_id: send_amounts[0].id})
+                          destination_country_id: destinations[0].id, receive_method_id: 1,
+                          send_amount_id: send_amounts[0].id, payment_method_id: payment_methods[0].id,
+                          time_estimate: data[2]})
       puts fee.inspect
     end
   end
