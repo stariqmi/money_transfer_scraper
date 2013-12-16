@@ -43,3 +43,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Want to be able to deploy easily to EC2
+gem 'capistrano'
+gem 'capistrano-ext'
