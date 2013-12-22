@@ -49,3 +49,4 @@ gem 'capistrano'
 gem 'capistrano-ext'
 
 gem 'therubyracer'
+gem 'puma'
