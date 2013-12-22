@@ -16,7 +16,7 @@ def get_rate(cookies, country):
     # Construct query params 
     query = {}
     query["fCountry"] = "USA"
-    query["dCountry"] = country
+    query["dCountry"] = country[1]
 
     # Post request to get param for main post request
     req = requests.post("https://www.moneygram.com/wps/mgo/jsps/estimator/estimatorServiceAtLocation.jsp", params=query, cookies=cookies)
@@ -58,5 +58,5 @@ def get_rate(cookies, country):
     rate = raw_rate.strip()
     fee = raw_fees.strip()
     print "{0} \t {1} \t {2}".format(country, rate, fee)
-
+    return {"rate":rate, "fee":fee}
 

@@ -21,7 +21,10 @@ destinations.each do |dest|
 	DestinationCountry.create({abbreviation: dest[0], name: dest[1]})
 end
 
-operators = [["Western Union", "http://www.westernunion.com/Home"]]
+operators = [
+             ["Western Union", "http://www.westernunion.com/Home"],
+             ["MoneyGram", "https://www.moneygram.com/wps/portal/moneygramonline/home/estimator?LC=en-US"]
+            ]
 operators.each do |op|
 	Operator.create({name: op[0], website: op[1]})
 end
