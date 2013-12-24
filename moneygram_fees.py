@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import moneygram_utils as Utils
 
 # Country codes 

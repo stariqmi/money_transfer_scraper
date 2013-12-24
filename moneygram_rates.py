@@ -1,3 +1,4 @@
+#!/usr/bin/python
 __author__ = 'salmantariqmirza'
 
 import moneygram_utils
