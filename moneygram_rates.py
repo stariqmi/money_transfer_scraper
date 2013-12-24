@@ -2,7 +2,7 @@ __author__ = 'salmantariqmirza'
 
 import moneygram_utils
 
-# Array to hold all country cdoes used in post request params
+# Array to hold all country codes used in post request params
 countries = [
              ["TH","THA"], 
              ["CN","CHN"], 
