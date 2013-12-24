@@ -2,8 +2,10 @@ class RatesController < ApplicationController
   def show
   	if params[:agency] == "western_union"
   		@operator_name = "Western Union"
-  		operator_id = Operator.where(name: @operator_name)[0].id
-  		@rates = FxRate.where(operator_id: operator_id)
-  	end
+    elsif params[:agency] == "moneygram"
+        @operator_name = "MoneyGram"
+    end
+    operator = Operator.where(name: @operator_name)[0]
+    @rates = operator.fx_rates
   end
 end

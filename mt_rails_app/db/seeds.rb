@@ -29,7 +29,7 @@ operators.each do |op|
 	Operator.create({name: op[0], website: op[1]})
 end
 
-payment_methods = ["Bank payment through WU", "Credit/debit card", "Bank transfer"]
+payment_methods = ["Bank payment through WU", "Credit/debit card", "Bank transfer", "MoneyGram Online Economy", "MoneyGram Online Sameday"]
 payment_methods.each do |method|
 	PaymentMethod.create({method: method})
 end
