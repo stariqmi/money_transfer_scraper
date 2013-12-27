@@ -23,7 +23,7 @@ end
 
 operators = [
              ["Western Union", "http://www.westernunion.com/Home"],
-             ["MoneyGram", "https://www.moneygram.com/wps/portal/moneygramonline/home/estimator?LC=en-US"]
+             ["MoneyGram", "https://www.moneygram.com/wps/portal/moneygramonline/home/estimator?LC=en-US"],
              ["Xoom", "https://www.xoom.com/send/getstarted"]
             ]
 operators.each do |op|

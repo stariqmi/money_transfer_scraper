@@ -10,7 +10,7 @@ namespace :xoom do
             payment_options = PaymentMethod.where(method: "Xoom " << data[2])
             fees_raw = data[3].to_f
             fees = FxFee.create({fee: fees_raw, timestamp: DateTime.now, operator_id: operators[0].id, destination_country_id: destinations[0].id, receive_method_id: 1, 
-                                    send_amount_id: send_amounts[0].id, payment_method_id: payment_methods[0].id, time_estimate: "Unknown"})  
+                                    send_amount_id: send_amounts[0].id, payment_method_id: payment_options[0].id, time_estimate: "Unknown"})  
             puts fees.inspect
         end
     end
