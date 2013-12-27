@@ -19,10 +19,13 @@ def get_rates(country, currency):
     }
 
     req = requests.post("http://www.xoom.com/ajax/send/getstarted/amount", params=query)
+
+    # Save response to file
     amt_file = open("amount.html", "w")
     amt_file.write(req.text)
     amt_file.close()
 
+    # Parse saved response
     amt_file = open("amount.html", "r")
     html = lxml.html.parse(amt_file)
     raw_rate = html.xpath('//span[@id="exchangeRate"]')[0].text_content()
@@ -50,20 +53,48 @@ def get_fees(country, currency, amount):
         "paymentType": "ACH"
     }
 
-    req2 = requests.post("https://www.xoom.com/ajax/send/getstarted/payout/deposit", params=query)
+    req = ""
+
+    # If country is India
+    if country == "IN":
+        query = {
+            "receiveCountryCode": country,
+            "receiveCurrencyCode": currency,
+            "recipientId": "0",
+            "sendAmount": amount,
+            "accountType": "CHECKING",
+            "paymentType": "ACH"
+        }
+        req = requests.post("https://www.xoom.com/ajax/send/getstarted/payout/deposit", params=query)
+
+    # If country is Philippines, Mexico
+    else:
+        query = {
+            "receiveCountryCode": country,
+            "receiveCurrencyCode": currency,
+            "recipientId": "0",
+            "sendAmount": amount,
+            "disbursementType": "PICKUP"
+        }
+        req = requests.post("https://www.xoom.com/ajax/send/getstarted/payout", params=query)
+
+    # Save response to file for parsing
     pay_file = open("payment.html", "w")
-    pay_file.write(req2.text)
+    pay_file.write(req.text)
     pay_file.close()
 
+    # Parse saved file
     pay_file = open("payment.html","r")
     html = lxml.html.parse(pay_file)
 
     fees = []
 
+    # Get payment types
     methods_html = html.xpath('//input[@name="accountType"]')
     for method in methods_html:
         fees.append([method.attrib["value"]])
 
+    # Get payment type fees
     counter = 0
     fees_html = html.xpath('//span[@class="fee payment-fee"]')
     for fee in fees_html:
@@ -72,6 +103,3 @@ def get_fees(country, currency, amount):
 
     pay_file.close()
     return fees
-
-print get_rates("IN", "INR")
-print get_fees("IN", "INR", "100.00")
