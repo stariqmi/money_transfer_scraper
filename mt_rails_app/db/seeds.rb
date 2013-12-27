@@ -24,12 +24,14 @@ end
 operators = [
              ["Western Union", "http://www.westernunion.com/Home"],
              ["MoneyGram", "https://www.moneygram.com/wps/portal/moneygramonline/home/estimator?LC=en-US"]
+             ["Xoom", "https://www.xoom.com/send/getstarted"]
             ]
 operators.each do |op|
 	Operator.create({name: op[0], website: op[1]})
 end
 
-payment_methods = ["Bank payment through WU", "Credit/debit card", "Bank transfer", "MoneyGram Online Economy", "MoneyGram Online Sameday"]
+payment_methods = ["Bank payment through WU", "Credit/debit card", "Bank transfer", "MoneyGram Online Economy", 
+					"MoneyGram Online Sameday", "Xoom CHECKING", "Xoom DEBIT_CARD", "Xoom CREDIT_CARD"]
 payment_methods.each do |method|
 	PaymentMethod.create({method: method})
 end
