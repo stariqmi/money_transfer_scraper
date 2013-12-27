@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1def7dc-b1e1-444d-a831-22319d80f954" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moneygram_rates.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mt_rails_app/Gemfile.lock" afterPath="$PROJECT_DIR$/mt_rails_app/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mt_rails_app/Gemfile" afterPath="$PROJECT_DIR$/mt_rails_app/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xoom/xoom_fees.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xoom/xoom_rates.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.scrape_western.sh.swp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/xoom_utils.py" afterPath="$PROJECT_DIR$/xoom/xoom_utils.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="money_transfer_scraper.iws" />
@@ -29,39 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="western_union_rates.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/western_union_rates.py">
+      <file leaf-file-name="xoom_utils.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xoom/xoom_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="46" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="315">
+            <state line="27" column="26" selection-start="754" selection-end="754" vertical-scroll-proportion="-2.3333333" vertical-offset="1245" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="western_union_fees.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/western_union_fees.py">
+      <file leaf-file-name="xoom_fees.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xoom/xoom_fees.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="42" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="735">
+            <state line="5" column="13" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moneygram_rates.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/moneygram_rates.py">
+      <file leaf-file-name="xoom_rates.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xoom/xoom_rates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2722323" vertical-offset="0" max-vertical-offset="551">
-              <folding>
-                <element signature="e#33#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="western_union_utils.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/western_union_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="55" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="1170">
+            <state line="5" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
               <folding />
             </state>
           </provider>
@@ -95,6 +84,10 @@
         <option value="$PROJECT_DIR$/western_union_fees.py" />
         <option value="$PROJECT_DIR$/mt_rails_app/lib/assets/rates/western_union_fees.csv" />
         <option value="$PROJECT_DIR$/moneygram_rates.py" />
+        <option value="$PROJECT_DIR$/xoom_utils.py" />
+        <option value="$PROJECT_DIR$/xoom/xoom_rates.py" />
+        <option value="$PROJECT_DIR$/xoom/xoom_fees.py" />
+        <option value="$PROJECT_DIR$/xoom/xoom_utils.py" />
       </list>
     </option>
   </component>
@@ -129,7 +122,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -150,22 +142,83 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../beta_test_google" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/xoom" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.xoom_fees">
+    <configuration default="false" name="xoom_rates" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xoom" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="money_transfer_scraper" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xoom/xoom_rates.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="xoom_fees" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xoom" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="money_transfer_scraper" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xoom/xoom_fees.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="xoom_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xoom" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="money_transfer_scraper" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xoom/xoom_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -287,7 +340,18 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.xoom_rates" />
+      <item index="1" class="java.lang.String" itemvalue="Python.xoom_fees" />
+      <item index="2" class="java.lang.String" itemvalue="Python.xoom_utils" />
+    </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.xoom_fees" />
+        <item index="1" class="java.lang.String" itemvalue="Python.xoom_utils" />
+        <item index="2" class="java.lang.String" itemvalue="Python.xoom_rates" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
@@ -329,18 +393,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1360" height="674" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1360" height="674" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23529412" sideWeight="0.6701209" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20882353" sideWeight="0.6701209" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -367,20 +431,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/western_union_fees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/western_union_rates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="345">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/western_union_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="41" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1170">
@@ -438,38 +488,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/western_union_rates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="46" selection-start="412" selection-end="412" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/western_union_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="55" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mt_rails_app/lib/assets/rates/western_union_fees.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="12" selection-start="7305" selection-end="7305" vertical-scroll-proportion="0.5644283" vertical-offset="1849" max-vertical-offset="2400">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/western_union_fees.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="42" selection-start="1356" selection-end="1356" vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="735">
+        <state line="20" column="19" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/moneygram_rates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2722323" vertical-offset="0" max-vertical-offset="551">
-          <folding>
-            <element signature="e#33#48#0" expanded="true" />
-          </folding>
+        <state line="23" column="32" selection-start="545" selection-end="545" vertical-scroll-proportion="0.4827586" vertical-offset="79" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/western_union_fees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="42" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.75499094" vertical-offset="364" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/western_union_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="43" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.49814126" vertical-offset="242" max-vertical-offset="1440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xoom/xoom_rates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xoom/xoom_fees.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xoom/xoom_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="26" selection-start="754" selection-end="754" vertical-scroll-proportion="-2.3333333" vertical-offset="1245" max-vertical-offset="1665">
+          <folding />
         </state>
       </provider>
     </entry>
