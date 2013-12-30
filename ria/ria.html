@@ -1,0 +1,1257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="js"><head><title>Send Money Price Calculator :: RiaMoneyTransfer.com</title><script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//s3.amazonaws.com/ki.js/49496/afF.js"></script><script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="//cdn.optimizely.com/js/234628017.js"> </script><meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><link href="/combres/ExternalMasterCSS/-271070822/" type="text/css" rel="stylesheet" /><script src="/combres/GlobalJS/-328925842/" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var isPostBack;
+        var fv;
+        var clientMessage =
+        {
+            ClientChooseCountry: 'Please choose a country',
+            ClientEnterMinAmount: 'Please enter at least one dollar',
+            ClientEnterMaxAmount: 'Please enter a smaller amount',
+            ClientEnterValidAmount: 'Please enter a valid amount'
+        }
+
+        function pageLoad(sender, args) {
+            fv = new eWires.Utility.FormValidator();
+            fv.DisplayIcon(false);
+            fv.SetTrace(false);
+            fv.SetFocus(false);
+            fv.MinValue(1);
+            fv.maxValue = 9999999999999;
+            
+            fv.AddHandler($get("ContentPlaceHolder1_ddCountryTo"), [
+            {
+                EventName: "change",
+                Function: function() {
+                    fv.ValidateElement($get("ContentPlaceHolder1_ddCountryTo"));
+                }
+            }
+            ]);
+            fv.AddHandler($get("ContentPlaceHolder1_ddCurrency"), [
+            {
+            	EventName: "change",
+            	Function: function () {
+            			$get("ContentPlaceHolder1_btnEstimate").disabled = false;	
+            	}
+            }
+            ]);
+            fv.AddHandler($get("ContentPlaceHolder1_txtAmount"), [
+            {
+                EventName: "change",
+                Function: function() {
+                    fv.ValidateElement($get("ContentPlaceHolder1_txtAmount"));
+                	if ($("#ContentPlaceHolder1_txtAmount").val() != '')
+                		$get("ContentPlaceHolder1_btnEstimate").disabled = false;						
+                }
+            }
+            ]);
+            fv.AddElement(
+                 $get("ContentPlaceHolder1_ddCountryTo"),
+                 [
+                    { ValidationType: fv.ValidatorTypes.option, Message: clientMessage.ClientChooseCountry }
+                 ],
+                 null,
+                 "error-msg-price-calc",
+                 null,
+                 null
+            );
+            
+		      isPostBack = $get("ContentPlaceHolder1_IsPostback").value;
+	        }
+
+        function ValidateFormIndex() {
+            var isValid = fv.ValidateForm();
+            if (isValid) {
+            	$get('ContentPlaceHolder1_btnEstimate').disabled = false;
+            }
+            return isValid;
+        }
+    
+    </script>
+
+
+<script type="text/javascript">	var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-29963195-2']); _gaq.push(['_setDomainName', 'www.riamoneytransfer.com']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+
+        <meta content="www.pages01.net,riafinancial.com,riamoneytransfer.com" name="com.silverpop.brandeddomains" />
+        <meta content="engage1.silverpop.com" name="com.silverpop.cothost" />
+    <meta content="Estimate money transfer fees using our pricing calculator." name="description" /><meta content="fees, money transfer, estimate, calculator, send money to, transfer amount, delivery currency" name="keywords" /><script language="javascript" type="text/javascript" src="https://a1.websitealive.com/4290/Visitor/vTracker_v2.asp?websiteid=0&amp;groupid=4290"></script><style type="text/css">.extole1388283886111.cta-floater-ns1388283886111 a {
+  color: #1e7ec8;
+  text-decoration: underline; }
+  .extole1388283886111.cta-floater-ns1388283886111 a:hover {
+    text-decoration: none; }
+
+.invisible-div1388283886111 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  filter: "alpha(opacity=60)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; }
+
+.extole1388283886111.cta-floater-ns1388283886111 {
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+  /* HTML5 display-role reset for older browsers */ }
+  .extole1388283886111.cta-floater-ns1388283886111 html, .extole1388283886111.cta-floater-ns1388283886111 body, .extole1388283886111.cta-floater-ns1388283886111 div, .extole1388283886111.cta-floater-ns1388283886111 span, .extole1388283886111.cta-floater-ns1388283886111 applet, .extole1388283886111.cta-floater-ns1388283886111 object, .extole1388283886111.cta-floater-ns1388283886111 iframe,
+  .extole1388283886111.cta-floater-ns1388283886111 h1, .extole1388283886111.cta-floater-ns1388283886111 h2, .extole1388283886111.cta-floater-ns1388283886111 h3, .extole1388283886111.cta-floater-ns1388283886111 h4, .extole1388283886111.cta-floater-ns1388283886111 h5, .extole1388283886111.cta-floater-ns1388283886111 h6, .extole1388283886111.cta-floater-ns1388283886111 p, .extole1388283886111.cta-floater-ns1388283886111 blockquote, .extole1388283886111.cta-floater-ns1388283886111 pre,
+  .extole1388283886111.cta-floater-ns1388283886111 a, .extole1388283886111.cta-floater-ns1388283886111 abbr, .extole1388283886111.cta-floater-ns1388283886111 acronym, .extole1388283886111.cta-floater-ns1388283886111 address, .extole1388283886111.cta-floater-ns1388283886111 big, .extole1388283886111.cta-floater-ns1388283886111 cite, .extole1388283886111.cta-floater-ns1388283886111 code,
+  .extole1388283886111.cta-floater-ns1388283886111 del, .extole1388283886111.cta-floater-ns1388283886111 dfn, .extole1388283886111.cta-floater-ns1388283886111 em, .extole1388283886111.cta-floater-ns1388283886111 img, .extole1388283886111.cta-floater-ns1388283886111 ins, .extole1388283886111.cta-floater-ns1388283886111 kbd, .extole1388283886111.cta-floater-ns1388283886111 q, .extole1388283886111.cta-floater-ns1388283886111 s, .extole1388283886111.cta-floater-ns1388283886111 samp,
+  .extole1388283886111.cta-floater-ns1388283886111 small, .extole1388283886111.cta-floater-ns1388283886111 strike, .extole1388283886111.cta-floater-ns1388283886111 strong, .extole1388283886111.cta-floater-ns1388283886111 sub, .extole1388283886111.cta-floater-ns1388283886111 sup, .extole1388283886111.cta-floater-ns1388283886111 tt, .extole1388283886111.cta-floater-ns1388283886111 var,
+  .extole1388283886111.cta-floater-ns1388283886111 b, .extole1388283886111.cta-floater-ns1388283886111 u, .extole1388283886111.cta-floater-ns1388283886111 i, .extole1388283886111.cta-floater-ns1388283886111 center,
+  .extole1388283886111.cta-floater-ns1388283886111 dl, .extole1388283886111.cta-floater-ns1388283886111 dt, .extole1388283886111.cta-floater-ns1388283886111 dd, .extole1388283886111.cta-floater-ns1388283886111 ol, .extole1388283886111.cta-floater-ns1388283886111 ul, .extole1388283886111.cta-floater-ns1388283886111 li,
+  .extole1388283886111.cta-floater-ns1388283886111 fieldset, .extole1388283886111.cta-floater-ns1388283886111 form, .extole1388283886111.cta-floater-ns1388283886111 label, .extole1388283886111.cta-floater-ns1388283886111 legend,
+  .extole1388283886111.cta-floater-ns1388283886111 table, .extole1388283886111.cta-floater-ns1388283886111 caption, .extole1388283886111.cta-floater-ns1388283886111 tbody, .extole1388283886111.cta-floater-ns1388283886111 tfoot, .extole1388283886111.cta-floater-ns1388283886111 thead, .extole1388283886111.cta-floater-ns1388283886111 tr, .extole1388283886111.cta-floater-ns1388283886111 th, .extole1388283886111.cta-floater-ns1388283886111 td,
+  .extole1388283886111.cta-floater-ns1388283886111 article, .extole1388283886111.cta-floater-ns1388283886111 aside, .extole1388283886111.cta-floater-ns1388283886111 canvas, .extole1388283886111.cta-floater-ns1388283886111 details, .extole1388283886111.cta-floater-ns1388283886111 embed,
+  .extole1388283886111.cta-floater-ns1388283886111 figure, .extole1388283886111.cta-floater-ns1388283886111 figcaption, .extole1388283886111.cta-floater-ns1388283886111 footer, .extole1388283886111.cta-floater-ns1388283886111 header, .extole1388283886111.cta-floater-ns1388283886111 hgroup,
+  .extole1388283886111.cta-floater-ns1388283886111 menu, .extole1388283886111.cta-floater-ns1388283886111 nav, .extole1388283886111.cta-floater-ns1388283886111 output, .extole1388283886111.cta-floater-ns1388283886111 ruby, .extole1388283886111.cta-floater-ns1388283886111 section, .extole1388283886111.cta-floater-ns1388283886111 summary,
+  .extole1388283886111.cta-floater-ns1388283886111 time, .extole1388283886111.cta-floater-ns1388283886111 mark, .extole1388283886111.cta-floater-ns1388283886111 audio, .extole1388283886111.cta-floater-ns1388283886111 video,
+  .extole1388283886111.cta-floater-ns1388283886111 input, .extole1388283886111.cta-floater-ns1388283886111 textarea, .extole1388283886111.cta-floater-ns1388283886111 select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: auto;
+    font: 12px "arial", sans-serif;
+    line-height: 1;
+    vertical-align: baseline;
+    background: transparent;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+    text-align: left; }
+  .extole1388283886111.cta-floater-ns1388283886111 article, .extole1388283886111.cta-floater-ns1388283886111 aside, .extole1388283886111.cta-floater-ns1388283886111 details, .extole1388283886111.cta-floater-ns1388283886111 figcaption, .extole1388283886111.cta-floater-ns1388283886111 figure,
+  .extole1388283886111.cta-floater-ns1388283886111 footer, .extole1388283886111.cta-floater-ns1388283886111 header, .extole1388283886111.cta-floater-ns1388283886111 hgroup, .extole1388283886111.cta-floater-ns1388283886111 menu, .extole1388283886111.cta-floater-ns1388283886111 nav, .extole1388283886111.cta-floater-ns1388283886111 section, .extole1388283886111.cta-floater-ns1388283886111 form {
+    display: block; }
+  .extole1388283886111.cta-floater-ns1388283886111 body {
+    line-height: 1; }
+  .extole1388283886111.cta-floater-ns1388283886111 ol, .extole1388283886111.cta-floater-ns1388283886111 ul {
+    list-style: none; }
+  .extole1388283886111.cta-floater-ns1388283886111 blockquote, .extole1388283886111.cta-floater-ns1388283886111 q {
+    quotes: none; }
+  .extole1388283886111.cta-floater-ns1388283886111 blockquote:before, .extole1388283886111.cta-floater-ns1388283886111 blockquote:after,
+  .extole1388283886111.cta-floater-ns1388283886111 q:before, .extole1388283886111.cta-floater-ns1388283886111 q:after {
+    content: '';
+    content: none; }
+  .extole1388283886111.cta-floater-ns1388283886111 table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  .extole1388283886111.cta-floater-ns1388283886111 .delete-button1388283886111 {
+    border-radius: 15px;
+    font-size: 15px;
+    color: #444;
+    top: 3px;
+    left: 100%;
+    margin-left: -18px;
+    position: absolute;
+    display: block;
+    background-color: white;
+    padding: 0 1px; }
+    .extole1388283886111.cta-floater-ns1388283886111 .delete-button1388283886111:hover {
+      color: #f00; }
+  .extole1388283886111.cta-floater-ns1388283886111 .close-button1388283886111 {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+    display: block; }
+    .extole1388283886111.cta-floater-ns1388283886111 .close-button1388283886111.outside-close-button1388283886111 {
+      top: -7px;
+      right: -9px; }
+    .extole1388283886111.cta-floater-ns1388283886111 .close-button1388283886111 &gt; .content1388283886111 {
+      display: block;
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      background: transparent url(//media.extole.com/base-creatives/20131213.2029/widget-common/images/close-button.png) 0 0 repeat-y; }
+    .extole1388283886111.cta-floater-ns1388283886111 .close-button1388283886111.mini1388283886111 &gt; .content1388283886111 {
+      background: transparent;
+      color: white;
+      width: auto;
+      height: auto; }
+    .extole1388283886111.cta-floater-ns1388283886111 .close-button1388283886111:hover &gt; .content1388283886111 {
+      background-position: 0px 21px; }
+  .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2147483147; }
+    .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+      width: 300px; }
+    .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111 {
+      text-align: right;
+      color: white; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111 &gt; * {
+        text-align: right; }
+    .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .cta-floater-state1388283886111 {
+      display: none;
+      text-decoration: none; }
+    .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+      display: block;
+      box-sizing: border-box;
+      padding: 10px 20px 10px 10px;
+      background: #459943;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #459943 0%, #428a40 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #459943), color-stop(100%, #428a40));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #459943 0%, #428a40 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #459943 0%, #428a40 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #459943 0%, #428a40 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #459943 0%, #428a40 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#459943', endColorstr='#428a40',GradientType=0 );
+      /* IE6-9 */
+      border: 1px solid #459943;
+      color: white;
+      cursor: pointer; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+        padding-right: 10px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+        border-radius: 5px 0px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+        cursor: default;
+        padding-top: 35px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 .cfs-share1388283886111 {
+          font-size: 20px;
+          line-height: 22px;
+          margin: 0.5em;
+          text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 .cfs-button-container1388283886111 {
+          margin: 15px auto 3px;
+          text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 .cfs-button1388283886111 {
+          border-radius: 3px;
+          display: inline-block;
+          font-size: 22px;
+          padding: 12px;
+          background: #ffffff;
+          color: #459943;
+          text-decoration: none; }
+    .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 {
+      top: 0;
+      right: 0;
+      padding: 3px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+    @media (min-device-width: 320px) and (max-device-width: 480px) and (min-width: 481px) and (orientation: portrait) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 {
+        zoom: 3; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (min-width: 569px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 {
+        zoom: 2; } }
+    @media (min-device-width: 320px) and (max-device-width: 480px) and (min-width: 481px) and (orientation: landscape) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 {
+        zoom: 2; } }
+    @media (device-width: 720px) and (min-width: 721px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 {
+        zoom: 3; } }
+    @media (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+    @media (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+    @media (device-width: 720px) and (min-width: 721px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+    @media screen and (min-device-width: 800px) and (max-width: 640px) {
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.standard1388283886111, .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111.tickle1388283886111 {
+        width: 100%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-min1388283886111 {
+          left: auto;
+          width: 50px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-standard1388283886111 {
+          border-radius: 0px; }
+        .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .shown1388283886111.cta-floater-tickle1388283886111 {
+          border-radius: 5px 5px 0px 0px; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .close-button1388283886111.mini1388283886111 .content1388283886111 {
+        font-size: 150%; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .standard-content1388283886111 {
+        display: none; }
+      .extole1388283886111.cta-floater-ns1388283886111 .cta-floater1388283886111 .mobile-content1388283886111 {
+        display: inline; } }
+ /*********************************
+Client: Ria Financial
+Type: Floater CTA - everywhere zone
+Author: Arianna Azevedo
+Last Updated: 12.12.13
+*********************************/
+
+
+
+@font-face {
+    font-family: 'rokkittregular';
+    src: url('//tags.extole.com/c/clients/414988/brand/rokkitt-webfont.eot');
+    src: url('//tags.extole.com/c/clients/414988/brand/rokkitt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//tags.extole.com/c/clients/414988/brand/rokkitt-webfont.woff') format('woff'),
+         url('//tags.extole.com/c/clients/414988/brand/rokkitt-webfont.ttf') format('truetype'),
+         url('//tags.extole.com/c/clients/414988/brand/rokkitt-webfont.svg#rokkittregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensans-regular';
+    src: url('//tags.extole.com/c/clients/414988/brand/opensans-regular-webfont.eot');
+    src: url('//tags.extole.com/c/clients/414988/brand/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('//tags.extole.com/c/clients/414988/brand/opensans-regular-webfont.woff') format('woff'),
+         url('//tags.extole.com/c/clients/414988/brand/opensans-regular-webfont.ttf') format('truetype'),
+         url('//tags.extole.com/c/clients/414988/brand/opensans-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#extole-placeholder-everywhere .shown1388283886111 {
+    color: #ffffff;
+    background: #3C63B4;
+    background:-moz-linear-gradient(top, #3C63B4 0%, #3C63B4 100%);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #3C63B4), color-stop(100%, #3C63B4));
+    background:-webkit-linear-gradient(top, #3C63B4 0%, #3C63B4 100%);
+    background:-o-linear-gradient(top, #3C63B4 0%, #3C63B4 100%);
+    background:-ms-linear-gradient(top, #3C63B4 0%, #3C63B4 100%);
+    background:linear-gradient(to bottom, #3C63B4 0%, #3C63B4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3C63B4', endColorstr='#3C63B4',GradientType=0 );
+    border: 1px solid #3C63B4;
+    font-family: 'rokkittregular', serif;
+    font-size:19px;
+    padding: 10px 33px 10px 14px;
+}
+
+#extole-placeholder-everywhere .cta-tickler-countdown1388283886111 {
+  color: #ffffff;
+     font-family: 'rokkittregular', serif;
+}
+
+#extole-placeholder-everywhere .cfs-share1388283886111 {
+  color: #ffffff;
+    font-family:'opensans-regular', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+#extole-placeholder-everywhere .disclaimer {
+  color: #ffffff;
+    font-family:'opensans-regular', sans-serif;
+    font-size: 11px;
+    line-height: 11px;
+    text-align:center;
+    margin-left: 16px;
+    
+}
+
+#extole-placeholder-everywhere .cfs-button-container1388283886111 {
+    padding-bottom:30px;
+}
+
+
+#extole-placeholder-everywhere .close-button1388283886111 .content1388283886111 {
+  color:#ffffff;
+}
+
+#extole-placeholder-everywhere .cfs-button1388283886111 {
+  color: #F89D2A;
+    font-family: 'rokkittregular', serif;
+    margin-top:-3px;
+}
+
+#extole-placeholder-everywhere .cfs-share {
+  color: #ffffff;
+    font-family:'opensans-regular', sans-serif;
+    font-size: 14px;
+}
+
+</style><script src="//media.extole.com/advocate-widget/20131213.1938/go.js"></script><script src="https://tracking.websitealive.com/vTrackerSrc_v2.asp?action=poll&amp;objectref=a1&amp;groupid=4290&amp;websiteid=0&amp;departmentid=0&amp;sessionid_=4841996&amp;grouponline=A&amp;online_acd=N&amp;autoproactiveenabled=N&amp;timeonthispage=12%2F28%2F2013+8%3A24%3A44+PM&amp;dt=Send%20Money%20Price%20Calculator%20%3A%3A%20RiaMoneyTransfer.com&amp;dl=https%3A%2F%2Fwww.riamoneytransfer.com%2FPricing%2FPriceCalculator.aspx&amp;rf=&amp;wsa_custom_str=%5E%5E%5E%5E&amp;random=0.43636683778177654" type="text/javascript" defer="defer" id="vtracker"></script></head>
+<body>
+    
+            <script type="text/javascript" src="https://www.sc.pages01.net/lp/static/js/iMAWebCookie.js?764b7b33-13eadc43127-ce240116a00f91fcaa71fbe5df141a8a&amp;h=www.pages01.net"> </script>
+        
+    
+        <!-- Qualaroo for riamoneytransfer.com -->
+        <!-- Paste this code right after the <body> tag on every page of your site. -->
+    
+    <script type="text/javascript">var _kiq = _kiq || [];</script>
+    <script type="text/javascript">
+        (function () {
+            setTimeout(function () {
+                var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+                s.async = true; s.src = '//s3.amazonaws.com/ki.js/49496/afF.js'; f.parentNode.insertBefore(s, f);
+            }, 1);
+        })();
+    </script>
+
+    
+
+<noscript>
+	
+	&lt;div class="noscript-modal-background"&gt;
+		&lt;div class="noscript-modal-dialog" style="margin: 25% auto 25% auto;"&gt;
+			&lt;div style="margin: 0; padding: 0;"&gt;
+				&lt;div style="background: #000; height: 30px;"&gt;
+					&lt;div style="float: left; padding-top: 4px;"&gt;
+						&lt;span style="color: White; font-size: 16px; margin-left: 16px;"&gt;
+							JavaScript Required
+						&lt;/span&gt;
+					&lt;/div&gt;
+					&lt;div style="float: right; width: 20px; height: 20px; margin: 3px 0 0 -5px; padding-top: 3px;"&gt;
+						
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+					&lt;div id="noScriptRedirectControl1_modalArrowImageDiv" style="float: left; background: url(/static/images/icons/modal-arrow.gif) no-repeat 15px 0;
+						width: 32px; height: 8px;"&gt;
+						&amp;nbsp;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div style="margin: 25px 0 10px 0;"&gt;
+					&lt;div id="noScriptRedirectControl1_exclamationMesssageDiv" style="background: url(/static/images/icons/caution_medium.gif) no-repeat 15px 12px;
+						margin-left: auto; margin-right: auto; width: 250px; height: 24px; padding: 20px 0 10px 67px;
+						font-weight: bold; font-size: 16px; color: #f7941d; text-align: left;"&gt;
+						Please enable JavaScript
+					&lt;/div&gt;					
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</noscript>
+
+
+
+
+    <div class="bodyDiv">
+    
+    <form onkeydown="if(typeof(fv) != 'undefined') fv.DefaultButtonForSummit(event);" autocomplete="off" id="form1" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ContentPlaceHolder1_btnEstimate')" onsubmit="submitEventHandler(this);" action="PriceCalculator.aspx" method="post" name="form1">
+<input type="hidden" value="" id="__EVENTTARGET" name="__EVENTTARGET" />
+<input type="hidden" value="" id="__EVENTARGUMENT" name="__EVENTARGUMENT" />
+<input type="hidden" value="/wEPDwUJMzI4OTEwOTgyD2QWAmYPZBYCAgsPZBYIAgIPZBYIZg9kFgQCAQ9kFgJmDxYEHgRocmVmBTEvQ3VzdG9tZXJFbnJvbGxtZW50L0N1c3RvbWVyTG9naW5JbmZvcm1hdGlvbi5hc3B4HgdvbmNsaWNrBTZfZ2FxLnB1c2goWydfdHJhY2tFdmVudCcsJ0hlYWRlcicsJ0xpbmsnLCdSZWdpc3RlciddKTsWAgIBDxYCHgRUZXh0BQhSZWdpc3RlcmQCAw9kFgJmDxYEHwAFGS9TaWduSW4vRW50ZXJBY2NvdW50LmFzcHgfAQU0X2dhcS5wdXNoKFsnX3RyYWNrRXZlbnQnLCdIZWFkZXInLCdMaW5rJywnTG9nIEluJ10pOxYCAgEPFgIfAgUGTG9nIEluZAICDxYCHwAFIGh0dHBzOi8vd3d3LnJpYW1vbmV5dHJhbnNmZXIuY29tZAIDD2QWAmYPFgIfAAUgaHR0cHM6Ly93d3cucmlhbW9uZXl0cmFuc2Zlci5jb21kAgQPZBYCAgEPFgIeBXN0eWxlBWBtYXJnaW46YXV0bzt3aWR0aDo5NDBweDtiYWNrZ3JvdW5kLWltYWdlOnVybCgvU3RhdGljL2ltYWdlcy9CYW5uZXJzL2hlYWRlci1QcmljZUNhbGN1bGF0b3IuanBnKTsWAgIBDw8WBB8CBRBQcmljZSBDYWxjdWxhdG9yHghUYWJJbmRleAEAAGRkAgMPZBYGZg9kFgQCAQ9kFgJmDxYEHwAFMS9DdXN0b21lckVucm9sbG1lbnQvQ3VzdG9tZXJMb2dpbkluZm9ybWF0aW9uLmFzcHgfAQU2X2dhcS5wdXNoKFsnX3RyYWNrRXZlbnQnLCdIZWFkZXInLCdMaW5rJywnUmVnaXN0ZXInXSk7FgICAQ8WAh8CBQhSZWdpc3RlcmQCAw9kFgJmDxYEHwAFGS9TaWduSW4vRW50ZXJBY2NvdW50LmFzcHgfAQU0X2dhcS5wdXNoKFsnX3RyYWNrRXZlbnQnLCdIZWFkZXInLCdMaW5rJywnTG9nIEluJ10pOxYCAgEPFgIfAgUGTG9nIEluZAICD2QWAmYPFgIfAAUgaHR0cHM6Ly93d3cucmlhbW9uZXl0cmFuc2Zlci5jb21kAgMPZBYCAgEPFgIfAwVgbWFyZ2luOmF1dG87d2lkdGg6OTQwcHg7YmFja2dyb3VuZC1pbWFnZTp1cmwoL1N0YXRpYy9pbWFnZXMvQmFubmVycy9oZWFkZXItUHJpY2VDYWxjdWxhdG9yLmpwZyk7FgICAQ8PFgQfAgUQUHJpY2UgQ2FsY3VsYXRvch8EAQAAZGQCBA9kFgJmDw8WBB8EAQAAHgdWaXNpYmxlaGRkAgUPZBYUAgEPZBYCZg8PFgIfBAEAAGQWDgIBDw8WAh8EAQAAZGQCAw8PFgIfBAEAAGRkAgUPDxYGHghDc3NDbGFzcwUhZ3JlZW5NYXBQYW5lbC1iaWctcHJpY2VDYWxjdWxhdG9yHwQBAAAeBF8hU0ICAmQWAgICDw8WAh8EAQAAFgIfAQWFAl9nYXEucHVzaChbJ190cmFja0V2ZW50JywnU2lkZWJhciBDaGF0IC0gQ2FsbCBDdXN0b21lciBTZXJ2aWNlJywnTGluaycsJ0xpdmUgQ2hhdCddKTsgd2luZG93Lm9wZW4oJ2h0dHBzOi8vYTEud2Vic2l0ZWFsaXZlLmNvbS80MjkwL3JSb3V0ZXIuYXNwP2dyb3VwaWQ9NDI5MCZ3ZWJzaXRlaWQ9MCZkZXBhcnRtZW50aWQ9NDM0NyZkbD0nK2VzY2FwZShkb2N1bWVudC5sb2NhdGlvbi5ocmVmKSwnUmlhTGl2ZUNoYXQnLCd3aWR0aD00MDAsaGVpZ2h0PTQ1MCcpO2QCBw8PFgIfBAEAAGRkAgkPDxYGHwYFIGJsdWVCb3hQYW5lbC1iaWctcHJpY2VDYWxjdWxhdG9yHwQBAAAfBwICZGQCCw8PFgYfBgUhZ3JlZW5Cb3hQYW5lbC1iaWctcHJpY2VDYWxjdWxhdG9yHwQBAAAfBwICZGQCDQ8PFgYfBgUfcmVkQm94UGFuZWwtYmlnLXByaWNlQ2FsY3VsYXRvch8EAQAAHwcCAmRkAgUPEA8WCB8EAQIAHg1EYXRhVGV4dEZpZWxkBRFDb3VudHJ5VHJhbnNsYXRlZB4ORGF0YVZhbHVlRmllbGQFBkFiYnJldh4LXyFEYXRhQm91bmRnFgIeCm9ua2V5cHJlc3MFbHJldHVybiBTZXRDbGlja0V2ZW50QnlFbnRlcktleShldmVudCwgJ0NvbnRlbnRQbGFjZUhvbGRlcjFfYnRuRXN0aW1hdGUnLCAnQ29udGVudFBsYWNlSG9sZGVyMV9kZENvdW50cnlUbycpOxAVjAEKQ2hvb3NlIE9uZQdBbGJhbmlhB0FudGlndWEJQXJnZW50aW5hB0FybWVuaWEJQXVzdHJhbGlhB0F1c3RyaWEKQXplcmJhaWphbgdCYWhyYWluCkJhbmdsYWRlc2gIQmFyYmFkb3MHQmVsYXJ1cwdCZWxnaXVtBUJlbmluB0JvbGl2aWEWQm9zbmlhIGFuZCBIZXJ6ZWdvdmluYQZCcmF6aWwIQnVsZ2FyaWEMQnVya2luYSBGYXNvB0J1cnVuZGkIQ2FtYm9kaWEIQ2FtZXJvb24GQ2FuYWRhCkNhcGUgVmVyZGUEQ2hhZAVDaGlsZQVDaGluYQhDb2xvbWJpYQdDb21vcm9zBUNvbmdvIENvbmdvIERlbW9jcmF0aWMgUmVwdWJsaWMgb2YgdGhlDENvb2sgSXNsYW5kcwpDb3N0YSBSaWNhDUNvdGUgZCBJdm9pcmUHQ3JvYXRpYQZDeXBydXMOQ3plY2ggUmVwdWJsaWMHRGVubWFyawhEamlib3V0aRJEb21pbmljYW4gUmVwdWJsaWMHRWN1YWRvcgVFZ3lwdAtFbCBTYWx2YWRvcgdFcml0cmVhB0VzdG9uaWEIRXRoaW9waWEERmlqaQdGaW5sYW5kBkZyYW5jZQVHYWJvbgZHYW1iaWEHR2VvcmdpYQdHZXJtYW55BUdoYW5hBkdyZWVjZQlHdWF0ZW1hbGERR3VpbmVhIChSZXB1YmxpYykGR3V5YW5hBUhhaXRpCEhvbmR1cmFzCUhvbmcgS29uZwdIdW5nYXJ5BUluZGlhCUluZG9uZXNpYQdJcmVsYW5kBklzcmFlbAVJdGFseQdKYW1haWNhBkpvcmRhbgpLYXpha2hzdGFuBUtlbnlhBktvc292bwZLdXdhaXQKS3lyZ3l6c3RhbiBMYW8gUGVvcGxlJ3MgRGVtb2NyYXRpYyBSZXB1YmxpYwZMYXR2aWEHTGViYW5vbgdMaWJlcmlhCUxpdGh1YW5pYQpMdXhlbWJvdXJnBE1hbGkKTWF1cml0YW5pYQlNYXVyaXRpdXMGTWV4aWNvFE1vbGRvdmEsIFJlcHVibGljIG9mCE1vbmdvbGlhB01vcm9jY28KTW96YW1iaXF1ZQVOZXBhbAtOZXRoZXJsYW5kcwtOZXcgWmVhbGFuZAlOaWNhcmFndWERTmlnZXIgUmVwdWJsaWMgb2YGTm9yd2F5CFBha2lzdGFuBlBhbmFtYQhQYXJhZ3VheQRQZXJ1C1BoaWxpcHBpbmVzBlBvbGFuZAhQb3J0dWdhbAtQdWVydG8gUmljbwVRYXRhcgdSb21hbmlhBlJ1c3NpYQZSd2FuZGEFU2Ftb2EHU2VuZWdhbAZTZXJiaWEKU2V5Y2hlbGxlcwxTaWVycmEgTGVvbmUJU2luZ2Fwb3JlCFNsb3Zha2lhCFNsb3ZlbmlhDFNvdXRoIEFmcmljYQVTcGFpbglTcmkgTGFua2EGU3dlZGVuC1N3aXR6ZXJsYW5kClRhamlraXN0YW4IVGFuemFuaWEIVGhhaWxhbmQEVG9nbwVUb25nYQhUcmluaWRhZAdUdW5pc2lhBlR1cmtleQZVZ2FuZGEHVWtyYWluZRRVbml0ZWQgQXJhYiBFbWlyYXRlcw5Vbml0ZWQgS2luZ2RvbQ1Vbml0ZWQgU3RhdGVzB1VydWd1YXkKVXpiZWtpc3RhbglWZW5lenVlbGEHVmlldG5hbRJWaXJnaW4gSXNsYW5kcywgVVMFWWVtZW4GWmFtYmlhCFppbWJhYndlFYwBCkNob29zZSBPbmUCQUwCQUcCQVICQU0CQVUCQVQCQVoCQkgCQkQCQkICQlkCQkUCQkoCQk8CQkECQlICQkcCQkYCQkkCS0gCQ00CQ0ECQ1YCVEQCQ0wCQ04CQ08CS00CQ0cCQ0QCQ0sCQ1ICQ0kCSFICQ1kCQ1oCREsCREoCRE8CRUMCRUcCU1YCRVICRUUCRVQCRkoCRkkCRlICR0ECR00CR0UCREUCR0gCR1ICR1QCR04CR1kCSFQCSE4CSEsCSFUCSU4CSUQCSUUCSUwCSVQCSk0CSk8CS1oCS0UCS1YCS1cCS0cCTEECTFYCTEICTFICTFQCTFUCTUwCTVICTVUCTVgCTUQCTU4CTUECTVoCTlACTkwCTloCTkkCTkUCTk8CUEsCUEECUFkCUEUCUEgCUEwCUFQCUFICUUECUk8CUlUCUlcCV1MCU04CUlMCU0MCU0wCU0cCU0sCU0kCWkECRVMCTEsCU0UCQ0gCVEoCVFoCVEgCVEcCVE8CVFQCVE4CVFICVUcCVUECQUUCVUsCVVMCVVkCVVoCVkUCVk4CVkkCWUUCWk0CWlcUKwOMAWdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZGQCCQ8PFgIfBAECABYCHwsFanJldHVybiBTZXRDbGlja0V2ZW50QnlFbnRlcktleShldmVudCwgJ0NvbnRlbnRQbGFjZUhvbGRlcjFfYnRuRXN0aW1hdGUnLCAnQ29udGVudFBsYWNlSG9sZGVyMV90eHRBbW91bnQnKTtkAgsPDxYCHwQBAABkZAIMDw8WAh8EAQAAZGQCDQ8PFgIfBAEAAGRkAg4PEA8WAh8EAQIAFgIfCwVrcmV0dXJuIFNldENsaWNrRXZlbnRCeUVudGVyS2V5KGV2ZW50LCAnQ29udGVudFBsYWNlSG9sZGVyMV9idG5Fc3RpbWF0ZScsICdDb250ZW50UGxhY2VIb2xkZXIxX2RkQ3VycmVuY3knKTtkZGQCEA8PFgIfBAEAAGRkAhEPDxYCHwQBAwBkZAISD2QWCAIDD2QWBAIBD2QWAmYPDxYCHwQBAABkZAIJDw8WAh8EAQAAZGQCBQ9kFgQCAQ9kFgJmDw8WAh8EAQAAZGQCCQ8PFgIfBAEAAGRkAgcPZBYEAgEPZBYCZg8PFgIfBAEAAGRkAgkPDxYCHwQBAABkZAIJD2QWBAIBD2QWAmYPDxYCHwQBAABkZAILDw8WAh8EAQAAZGRk6rMevjWmvJsRTUl8ncsh/sSQaO/zT3EgDS/zAK6ZT0I=" id="__VIEWSTATE" name="__VIEWSTATE" />
+
+<div>
+
+
+<input type="hidden" value="" id="__LASTFOCUS" name="__LASTFOCUS" />
+
+</div>
+
+<script type="text/javascript">
+//&lt;![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]&gt;
+</script>
+
+
+<script type="text/javascript" src="/WebResource.axd?d=07nYJl_uN1mJPKBC4uBWweRV3kC6greqcmKnXVDB_fq7JExTRKytSjle6bthxhHEjHe-ROAq_YQpMGcI9bYxPHrciTEbgYsVF-7aBQlyAGw1&amp;t=634674067713223750"></script>
+
+
+<script type="text/javascript" src="/ScriptResource.axd?d=_DdvUYOBj0PyZ1pUK_mAKXbj52yqgs0kx-zc1zqpMEkoY8D_xG9li0GmUD09PpE4hqtdjM3EHW_aSuBX427LEc2BHaEXyB_SuxOdYMd_Xk3yWL9FVlFVMJ39pjLZO9Plrc4Tzc4lZyMlVwyW2nrAVay4A1vPg2NvoW79EWr3H841&amp;t=68c4b60a"></script>
+<script type="text/javascript" src="/ScriptResource.axd?d=5emkH_1NFH7MwsBuqGDctr7e0TlaB5D-_VxFj2lyBKubJY8XobaB0CH46J_pxJSKV0TVTOwgdFYeOcPo7w4hojN2P0WjsEszGdml8TMB-fN9S8O80EBpDNaKm2FjiNH5-HyLCNgMN2qfB0FcOOHD-kuv6eD2PxOqVe_FkJYgBOI1&amp;t=ffffffff940d030f"></script>
+<script type="text/javascript" src="/ScriptResource.axd?d=UEDsHNe-jKx6hFC5PoKhVLyyH8_ohZKcCDp-4YIIyrbkN-2JaxUxA-wGMkssXmfR6ckAb0Y7xw05ZpZFNyUBdam_7c-nFcw4Ne8C5LZVx3T_Z3Z-BNjsOqbLAXsusith3OFoT39vYxaOXzu2fUpeZpHZini3ToVPIziyzVF2x99O9gGQN4fLQ3gXiH1euwoq0&amp;t=ffffffff940d030f"></script>
+<script type="text/javascript" src="../static/js/Validation/eWires.Utility.js"></script>
+<script type="text/javascript" src="../Services/ScriptMethods.asmx/js"></script>
+<script type="text/javascript" src="../Services/WCF/AJAX/NumericStringFormatter.svc/js"></script>
+<script type="text/javascript" src="/WebResource.axd?d=XCyvPBUVFaV6PzFN9kVSI3hGUPwInaFmeu_Yf5ydwcTxt57zAxTy-N4zbqOuxtF6tz2gjqY3dB-N7QFZJoPUuiw3LCxdzJOal7NJDap1CKw1&amp;t=634674067713223750"></script>
+<script type="text/javascript">
+//&lt;![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" &amp;&amp; ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]&gt;
+</script>
+
+    <script src="/combres/DoublePBCheckerJS/-1136301031/" type="text/javascript"></script>
+<script type="text/javascript">
+$(
+    function () {
+        try {
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+            prm.add_endRequest(unFreeze);              
+                      
+                if ($.cookie('CurrentSessionId') != null) {
+                    if ($.cookie('ewInst') == null) {
+                        $.cookie('ewInst', 1, { path: '/' });
+                    } else {                                            
+                        var ewInst = $.cookie('ewInst');        
+                        
+                            if (ewInst &lt; 1) {
+                                $.cookie('ewInst', null, { path: '/' });
+                                $.cookie('CurrentSessionId', null, { path: '/' });
+                                $.cookie('ASP.NET_SessionId', null, { path: '/' });                                
+                                window.location = '/SignIn/EnterAccount.aspx';    
+                            }
+                        
+                        ewInst++;
+                        $.cookie('ewInst', ewInst, { path: '/' });                           
+                    }
+                }
+			
+        } catch (Error) { }
+    }
+)
+
+
+var ua = $.browser;
+if (ua.msie &amp;&amp; ua.version.slice(0,1) &lt; 9) {
+    window.onbeforeunload = unloadInstance;    
+} else {
+    $(window).unload(unloadInstance);
+}
+
+</script>
+
+
+<div style="display:none;height: 100%;width: 100%;z-index: 9999;background-color: #FFFFFF;position:fixed;top: 0;left: 0;filter:alpha(opacity=10);opacity:0.1;" id="FreezePanel">
+</div>
+
+
+    <script type="text/javascript">
+//&lt;![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ExternalMasterSM', 'form1', [], [], [], 90, 'ctl00');
+//]]&gt;
+</script>
+
+       
+    <!-- Start Header Nav -->
+    
+
+<!-- Header Banner User Control -->
+
+
+<!-- Live Chat User Control -->
+
+
+<!-- dd menu -->
+<script src="/combres/HeaderJS/-858968916/" type="text/javascript"></script><link href="/combres/ExternalHeaderCSS/617906074/" type="text/css" rel="stylesheet" />
+<!-- Start Header Include -->
+<div class="header-nav-wrapper">
+	
+	<div style="z-index: 1;" class="sub-menu">
+		<div style="float:right;">							
+			
+<ul style="float: right;" class="btn-RegisterLogin">
+    <li class="btn_1"><a href="#"></a></li>
+    <li class="btn_2" id="ExternalHeader1_authenticationStatusIndicator_btn2Li"><a onclick="_gaq.push(['_trackEvent','Header','Link','Register']);" id="ExternalHeader1_authenticationStatusIndicator_registerOrAccountHomeAnchor" href="/CustomerEnrollment/CustomerLoginInformation.aspx"><strong>
+            Register
+        </strong></a></li>
+    <li class="btn_3"><a href="#"></a></li>
+    <li class="btn_4"><a href="#"></a></li>
+    <li class="btn_5"><a href="#"></a></li>
+    <li class="btn_6" id="ExternalHeader1_authenticationStatusIndicator_btn6Li"><a onclick="_gaq.push(['_trackEvent','Header','Link','Log In']);" id="ExternalHeader1_authenticationStatusIndicator_logInOrOutStatusAnchor" href="/SignIn/EnterAccount.aspx"><strong>
+            Log In
+        </strong></a></li>
+    <li class="btn_7"><a href="#"></a></li>
+</ul>
+
+			<script src="/combres/LiveChatJS/2064213996/" type="text/javascript"></script><link href="/combres/LiveChatCSS/2115382106/" type="text/css" rel="stylesheet" />
+
+			<ul style="float: right;" class="dropdown">
+			   <li class="sel_1"><a onclick="_gaq.push(['_trackEvent','Header','Link','Welcome User']);" href="/ASP_Pages/AccountServices/Customers/ManagePersonalInformation.aspx"></a></li>
+			   <li class="sel_1"><a onclick="_gaq.push(['_trackEvent','Header','Link','Contact Us']);" href="/InquireUs.aspx">Contact Us</a></li>
+			   <li class="sel_2"><a href="#">  |  </a></li>
+			   <li class="sel_3"><a style="font-size: 10px; text-align: right;" onclick="_gaq.push(['_trackEvent','Header','Link','Live Chat']); window.open('https://a1.websitealive.com/4290/rRouter.asp?groupid=4290&amp;websiteid=0&amp;departmentid=4347&amp;dl='+escape(document.location.href),'RiaLiveChat','width=400,height=450');" href="javascript: void(0);">Live Chat</a></li>
+			   <li class="sel_4"><a href="#">  </a></li>
+			</ul>
+
+
+		</div>
+	</div>
+
+	<div class="branding">
+		<a class="branding-logo" id="ExternalHeader1_branding" href="https://www.riamoneytransfer.com"></a>
+	</div>
+		
+<link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+<link href="/combres/MainMenuCSS/-315760960/" type="text/css" rel="stylesheet" />
+<ul class="menu" id="menuList">
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Home']);" id="ExternalHeader1_MainMenu1_lnkHome" href="https://www.riamoneytransfer.com">Home</a></li>
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Send Money']);" id="ExternalHeader1_MainMenu1_lnkSendMoney" href="/send-money/send-money-online.aspx">Send Money</a></li>
+    <li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Track A Transfer']);" href="/Track-Transfer.aspx">Track a Transfer</a></li>
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Price Calculator']);" href="/Pricing/PriceCalculator.aspx">Price Calculator</a></li>
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Find A Location']);" href="/BranchLocator.aspx">Find a Location</a></li>
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','Help']);" href="/send-money/help-center.aspx">Help</a></li>
+	<li><a onclick="_gaq.push(['_trackEvent','Main Navigation Menu Bar','Link','About Us']);" href="/About/About_RiaHistory.aspx">About Us</a></li>
+</ul>
+	</div>
+	
+	<!-- Header Banner User Control -->
+	
+
+<style type="text/css">
+
+.BannerHeader {
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	height: 68px;
+	width: 940px;
+	display: block;
+	position: relative;
+	padding-top: 40px;
+	/*padding-left: 10px;*/
+	/*margin-right: 30px;*/
+	margin-left: 150px;
+}
+.cssBannerTitle
+{
+    position:relative;
+    top:-20px;
+    margin-top:1px;
+}
+h1.mainPageHeader {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFF;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    border-bottom:none;
+}
+
+</style>
+
+<div style="margin:auto;width:940px;background-image:url(/Static/images/Banners/header-PriceCalculator.jpg);" class="BannerHeader" id="ExternalHeader1_HeaderBanner1_divBanner"><h1 class="mainPageHeader">  <span class="cssBannerTitle" id="ExternalHeader1_HeaderBanner1_lblBannerTitle">Price Calculator</span></h1></div>
+
+
+
+
+<!-- End Header Include //-->
+    
+
+    <!-- End Header Nav //-->
+    
+    <!-- Start Top Gradient Background -->
+    
+    <!-- End Top Gradient Background //-->
+    
+	<!-- Start Main Wrapper -->
+	<div style="margin-top:-50px" class="main-wrapper-external">    	    
+		
+
+        
+    
+        <!-- Start Price Calculator Content -->
+        <!-- Start Left Silo -->
+        <div style="min-height: 550px; #margin-top: 60px;" class="left-silo-external">
+            <div style="#position: relative; display: inline;" id="ContentPlaceHolder1_rightPanelInfoBoxes_positionPanel">
+	
+
+    
+
+	
+    <div class="greenMapPanel-big-priceCalculator" id="ContentPlaceHolder1_rightPanelInfoBoxes_greenMapPanel">
+		
+        <h2 class="h3_EN" id="ContentPlaceHolder1_rightPanelInfoBoxes_idh3">
+        Customer Service</h2>
+        <h4>
+            Questions?
+        </h4>
+        <div class="rightPanelChatIcon">
+            <img title="Get help through chat" alt="Get help through chat" src="/Static/images/icons/icon-multicolor-chat.png" />
+        </div>
+        <div style="clear:both;"> </div>
+        <p>
+            For questions, please use our <a href="javascript: void(0);" onclick="_gaq.push(['_trackEvent','Sidebar Chat - Call Customer Service','Link','Live Chat']); window.open('https://a1.websitealive.com/4290/rRouter.asp?groupid=4290&amp;websiteid=0&amp;departmentid=4347&amp;dl='+escape(document.location.href),'RiaLiveChat','width=400,height=450');" id="ContentPlaceHolder1_rightPanelInfoBoxes_lnkLiveChat">online chat</a> or call our toll-free number:
+        </p>
+
+		<pre>1-877-443-1399<br /><span>Monday to Sunday<br />5AM to 6PM PST</span></pre>
+
+        <div style="margin-left: 10px; margin-top: -28px;">
+            <img title="Get help through the phone" alt="Get help through the phone" src="/Static/images/icons/icon-multicolor-phone.png" />
+        </div>
+
+    
+	</div>
+    
+    
+    <div class="greenBoxPanel-big-priceCalculator" id="ContentPlaceHolder1_rightPanelInfoBoxes_greenBoxPanel">
+		
+        <h3 class="h3_EN" id="ContentPlaceHolder1_rightPanelInfoBoxes_idh3_mt">
+        Money Transfer FAQs
+            </h3>
+        <p>
+            <br />
+        Find answers to the most frequently asked money transfer questions.
+            </p>
+        <div style="text-align: right; margin-right: 10px;">
+            <ul class="learn-more">
+                <li><a style="background: none; color: #0064B4;
+                    padding-left: 0;" onclick="_gaq.push(['_trackEvent','Money Transfer FAQs','Link','Learn More']);" href="/MediaRelations/Send_Money_HelpCenter.aspx">Learn More</a></li>
+                <li>
+                    <img src="/Static/Images/icons/LearnMoreIcon.gif" /></li>
+            </ul>
+        </div>
+    
+	</div>
+	
+
+</div>
+
+            <div style="margin-top: -360px;" class="intro-text-external">
+                Estimate money transfer fees by filling out the information below:
+            </div>
+            <!-- End W/O Location Message //-->
+			<!-- Start Black Bar -->
+			<div class="marg-top-30 marg-bott-15">
+				<div class="blk-bar-690">
+					 <div style="float: left;">
+						Payment Details</div>
+					<span style="float: right; margin-right: 10px; font-weight: normal;" class="font9">*required field</span>
+				</div>
+			</div>
+            <!-- Start Sending Dropdown Boxes -->
+            <div style="padding-left: 30px;">
+                <table border="0" cellspacing="4" cellpadding="0" class="price-calculator-table">
+                    <tbody><tr>
+                        <td colspan="3">
+                            <div class="pad-bott-7 bold">
+                                Send Money to
+                                    <font color="red">*</font>
+                                    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <!-- Start Country Drop Down Menu -->
+                            <div>
+                                <select onkeypress="return SetClickEventByEnterKey(event, 'ContentPlaceHolder1_btnEstimate', 'ContentPlaceHolder1_ddCountryTo');" fxname="ddCountryTo" class="cust-select" tabindex="2" id="ContentPlaceHolder1_ddCountryTo" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$ddCountryTo\',\'\')', 0)" name="ctl00$ContentPlaceHolder1$ddCountryTo">
+	<option value="Choose One" selected="selected">Choose One</option>
+	<option value="AL">Albania</option>
+	<option value="AG">Antigua</option>
+	<option value="AR">Argentina</option>
+	<option value="AM">Armenia</option>
+	<option value="AU">Australia</option>
+	<option value="AT">Austria</option>
+	<option value="AZ">Azerbaijan</option>
+	<option value="BH">Bahrain</option>
+	<option value="BD">Bangladesh</option>
+	<option value="BB">Barbados</option>
+	<option value="BY">Belarus</option>
+	<option value="BE">Belgium</option>
+	<option value="BJ">Benin</option>
+	<option value="BO">Bolivia</option>
+	<option value="BA">Bosnia and Herzegovina</option>
+	<option value="BR">Brazil</option>
+	<option value="BG">Bulgaria</option>
+	<option value="BF">Burkina Faso</option>
+	<option value="BI">Burundi</option>
+	<option value="KH">Cambodia</option>
+	<option value="CM">Cameroon</option>
+	<option value="CA">Canada</option>
+	<option value="CV">Cape Verde</option>
+	<option value="TD">Chad</option>
+	<option value="CL">Chile</option>
+	<option value="CN">China</option>
+	<option value="CO">Colombia</option>
+	<option value="KM">Comoros</option>
+	<option value="CG">Congo</option>
+	<option value="CD">Congo Democratic Republic of the</option>
+	<option value="CK">Cook Islands</option>
+	<option value="CR">Costa Rica</option>
+	<option value="CI">Cote d Ivoire</option>
+	<option value="HR">Croatia</option>
+	<option value="CY">Cyprus</option>
+	<option value="CZ">Czech Republic</option>
+	<option value="DK">Denmark</option>
+	<option value="DJ">Djibouti</option>
+	<option value="DO">Dominican Republic</option>
+	<option value="EC">Ecuador</option>
+	<option value="EG">Egypt</option>
+	<option value="SV">El Salvador</option>
+	<option value="ER">Eritrea</option>
+	<option value="EE">Estonia</option>
+	<option value="ET">Ethiopia</option>
+	<option value="FJ">Fiji</option>
+	<option value="FI">Finland</option>
+	<option value="FR">France</option>
+	<option value="GA">Gabon</option>
+	<option value="GM">Gambia</option>
+	<option value="GE">Georgia</option>
+	<option value="DE">Germany</option>
+	<option value="GH">Ghana</option>
+	<option value="GR">Greece</option>
+	<option value="GT">Guatemala</option>
+	<option value="GN">Guinea (Republic)</option>
+	<option value="GY">Guyana</option>
+	<option value="HT">Haiti</option>
+	<option value="HN">Honduras</option>
+	<option value="HK">Hong Kong</option>
+	<option value="HU">Hungary</option>
+	<option value="IN">India</option>
+	<option value="ID">Indonesia</option>
+	<option value="IE">Ireland</option>
+	<option value="IL">Israel</option>
+	<option value="IT">Italy</option>
+	<option value="JM">Jamaica</option>
+	<option value="JO">Jordan</option>
+	<option value="KZ">Kazakhstan</option>
+	<option value="KE">Kenya</option>
+	<option value="KV">Kosovo</option>
+	<option value="KW">Kuwait</option>
+	<option value="KG">Kyrgyzstan</option>
+	<option value="LA">Lao People's Democratic Republic</option>
+	<option value="LV">Latvia</option>
+	<option value="LB">Lebanon</option>
+	<option value="LR">Liberia</option>
+	<option value="LT">Lithuania</option>
+	<option value="LU">Luxembourg</option>
+	<option value="ML">Mali</option>
+	<option value="MR">Mauritania</option>
+	<option value="MU">Mauritius</option>
+	<option value="MX">Mexico</option>
+	<option value="MD">Moldova, Republic of</option>
+	<option value="MN">Mongolia</option>
+	<option value="MA">Morocco</option>
+	<option value="MZ">Mozambique</option>
+	<option value="NP">Nepal</option>
+	<option value="NL">Netherlands</option>
+	<option value="NZ">New Zealand</option>
+	<option value="NI">Nicaragua</option>
+	<option value="NE">Niger Republic of</option>
+	<option value="NO">Norway</option>
+	<option value="PK">Pakistan</option>
+	<option value="PA">Panama</option>
+	<option value="PY">Paraguay</option>
+	<option value="PE">Peru</option>
+	<option value="PH">Philippines</option>
+	<option value="PL">Poland</option>
+	<option value="PT">Portugal</option>
+	<option value="PR">Puerto Rico</option>
+	<option value="QA">Qatar</option>
+	<option value="RO">Romania</option>
+	<option value="RU">Russia</option>
+	<option value="RW">Rwanda</option>
+	<option value="WS">Samoa</option>
+	<option value="SN">Senegal</option>
+	<option value="RS">Serbia</option>
+	<option value="SC">Seychelles</option>
+	<option value="SL">Sierra Leone</option>
+	<option value="SG">Singapore</option>
+	<option value="SK">Slovakia</option>
+	<option value="SI">Slovenia</option>
+	<option value="ZA">South Africa</option>
+	<option value="ES">Spain</option>
+	<option value="LK">Sri Lanka</option>
+	<option value="SE">Sweden</option>
+	<option value="CH">Switzerland</option>
+	<option value="TJ">Tajikistan</option>
+	<option value="TZ">Tanzania</option>
+	<option value="TH">Thailand</option>
+	<option value="TG">Togo</option>
+	<option value="TO">Tonga</option>
+	<option value="TT">Trinidad</option>
+	<option value="TN">Tunisia</option>
+	<option value="TR">Turkey</option>
+	<option value="UG">Uganda</option>
+	<option value="UA">Ukraine</option>
+	<option value="AE">United Arab Emirates</option>
+	<option value="UK">United Kingdom</option>
+	<option value="US">United States</option>
+	<option value="UY">Uruguay</option>
+	<option value="UZ">Uzbekistan</option>
+	<option value="VE">Venezuela</option>
+	<option value="VN">Vietnam</option>
+	<option value="VI">Virgin Islands, US</option>
+	<option value="YE">Yemen</option>
+	<option value="ZM">Zambia</option>
+	<option value="ZW">Zimbabwe</option>
+
+</select><input type="hidden" id="ContentPlaceHolder1_countryHiddenField" name="ctl00$ContentPlaceHolder1$countryHiddenField" />
+                            </div>
+                            <!-- End Country Drop Down Menu //-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="pad-top-15 pad-bott-7 bold">
+                                Transfer Amount (USD)
+                                <font color="red">*</font>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="pad-top-15 pad-bott-7 bold">
+                                Delivery Currency
+                                <font color="red">*</font>
+                            </div>
+                        </td>
+						<td></td>
+                    </tr>
+                    <tr>
+                        <td width="200px" valign="top" class="pad-bott-3">
+                            <input type="text" onkeypress="return SetClickEventByEnterKey(event, 'ContentPlaceHolder1_btnEstimate', 'ContentPlaceHolder1_txtAmount');" formattabletextbox="true" class="cust-input" tabindex="2" id="ContentPlaceHolder1_txtAmount" maxlength="10" name="ctl00$ContentPlaceHolder1$txtAmount" /> <input type="hidden" id="ContentPlaceHolder1_amountHiddenField" name="ctl00$ContentPlaceHolder1$amountHiddenField" />
+                            <br />
+                            <span style="color:Red;display:none;" class="error-msg-price-calc" id="ContentPlaceHolder1_requiredSendValidator">Please enter an amount.</span>
+                            <span style="color:Red;display:none;" class="red error-msg" id="ContentPlaceHolder1_minSendValidator">Please send an amount of $1 or more.</span>                        
+                            <span style="color:Red;display:none;" class="red error-msg" id="ContentPlaceHolder1_SendValidator">Please send an amount of $2999 or less.</span>
+                        </td>
+						<td valign="top" class="pad-bott-3">
+                            <!-- Start Currency Type -->
+                            <select onkeypress="return SetClickEventByEnterKey(event, 'ContentPlaceHolder1_btnEstimate', 'ContentPlaceHolder1_ddCurrency');" fxname="ddCurrency" class="cust-select" tabindex="2" id="ContentPlaceHolder1_ddCurrency" name="ctl00$ContentPlaceHolder1$ddCurrency">
+
+</select><input type="hidden" id="ContentPlaceHolder1_currencyHiddenField" name="ctl00$ContentPlaceHolder1$currencyHiddenField" />
+								<br />
+                            <span style="color:Red;visibility:hidden;" class="error-msg-price-calc" id="ContentPlaceHolder1_requiredCurrencyType">Please choose a currency</span>
+                            <!-- End Currency Type //-->
+                        </td>
+						<td valign="top">
+                            <!-- Start Estimate Price Button -->
+                            <input type="submit" class="btn-est-price" tabindex="3" id="ContentPlaceHolder1_btnEstimate" onclick='Page_ClientValidate(); return copyToHiddenVariables();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$btnEstimate", "", true, "priceCalculator", "", false, false))' value="Estimate Price" name="ctl00$ContentPlaceHolder1$btnEstimate" />
+                            <!-- End Estimate Price Button //-->
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <!-- End Sending Dropdown Boxes //-->
+            
+        </div>
+        <!-- End Left Silo //-->
+        <!-- End Send Money Option //-->
+        <!-- End Price Calculator Content //-->
+        <input type="hidden" value="0" id="ContentPlaceHolder1_IsPostback" name="ctl00$ContentPlaceHolder1$IsPostback" />
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            var s = $get("ContentPlaceHolder1_currencyHiddenField").value;
+            $.fxSelect("ddCountryTo").change(function() {
+
+            	fv.ValidateElement($get("ContentPlaceHolder1_txtAmount"));
+                var curDropDown = $.fxSelect("ddCurrency");
+                curDropDown.empty();
+    			if (this.value.length &gt; 0 &amp;&amp; this.value != "Choose One") {
+                    curDropDown.attr("disabled", "disabled");
+                    $get("ContentPlaceHolder1_btnEstimate").disabled = true;
+                    eWires.Services.ScriptMethods.GetCurrenciesWithName(this.value, OnGetCurrencySucceededCallback);
+                }
+    			$get("ContentPlaceHolder1_btnEstimate").disabled = false;
+            });
+        });
+
+        function OnGetCurrencySucceededCallback(result) {
+            var curDropDown = $.fxSelect("ddCurrency");
+            var i = 0;
+            $.each(result, function(i, val) {
+                if (result) {
+                    curDropDown.append(String.format("&lt;option value='{0}'&gt;{1}&lt;/option&gt;", val.Key, val.Value));
+                }
+            });
+			curDropDown.attr("disabled", false);
+            $get("ContentPlaceHolder1_btnEstimate").disabled = false;
+        };
+
+        function copyToHiddenVariables() {
+            var result = fv.ValidateForm();
+            if (result) {
+            	$get('ContentPlaceHolder1_btnEstimate').disabled = false;
+            	$("#ContentPlaceHolder1_currencyHiddenField").val($("#ContentPlaceHolder1_ddCurrency").val());
+				$("#ContentPlaceHolder1_countryHiddenField").val($("#ContentPlaceHolder1_ddCountryTo").val());
+				$("#ContentPlaceHolder1_amountHiddenField").val($("#ContentPlaceHolder1_txtAmount").val());
+            }
+            else {
+                window.setTimeout("$get('ContentPlaceHolder1_btnEstimate').disabled = false;", 50);
+            }
+            return result;
+        };
+        
+    </script>
+
+
+	</div>
+	<!-- End Main Wrapper //-->
+
+    <!-- Start Footer -->
+    <link href="/combres/FooterCSS/-112883915/" type="text/css" rel="stylesheet" />
+
+<script type="text/jscript"> /*@cc_on @if(@_jscript_version&gt;=5.7)new Image().src="https://evbeacon.networksolutions.com/evbeacon.gif" @end @*/ </script>
+
+<div id="footer">
+	<div class="wrapper">
+		<ul class="menu">
+			<li class="access">
+				<a href="/ASP_Pages/AccountServices/AccountHome.aspx">My Account</a>
+				<a id="footer1_lnkLogin" href="/SignIn/EnterAccount.aspx">Log In / Register</a>
+			</li>
+			<li class="money">
+				<a href="/send-money/send-money-online.aspx">Send Money</a>
+                <a href="/Track-Transfer.aspx">Track a Transfer</a>
+				<a href="/about/about_countries.aspx">Countries Served</a>
+				<a href="/send-money/compare-services.aspx">Compare Services</a>
+			</li>
+			<li class="calculator">
+				<a href="/Pricing/PriceCalculator.aspx">Price Calculator</a>
+			</li>
+			<li class="find">
+				<a href="/BranchLocator.aspx">Find a Location</a>
+			</li>
+			<li class="help">
+				<a href="/MediaRelations/Send_Money_HelpCenter.aspx">Help</a>
+				<a onclick="window.open('https://a1.websitealive.com/4290/rRouter.asp?groupid=4290&amp;websiteid=0&amp;departmentid=4347&amp;dl='+escape(document.location.href),'RiaLiveChat','width=400,height=450');" href="#">Live Chat</a>
+			</li>
+			<li class="about">
+				<a href="/About/About_RiaHistory.aspx">About Us</a>
+				<a href="/About/about_Euronet.aspx">Euronet Worldwide</a>
+				<a href="/About/about_compliance.aspx">Compliance</a>
+				<a href="/InquireUs.aspx">Contact Us</a>
+                <a href="http://www.riafinancial.com/global/file-a-complaint.aspx?webSyncID=603044ad-353a-18c4-1006-396e9d2e1083&amp;sessionGUID=6a1124e7-7146-bc68-3182-33db977a0436">File a Complaint (U.S.)</a>
+			</li>
+        </ul>
+		<p>
+			Copyright © 2013 Continental Exchange Solutions, Inc.  All rights reserved.            
+			<a href="/Policy/PrivacyPolicy.aspx">Privacy Policy</a>
+			  |  
+			<a href="/Policy/Terms.aspx">Terms and Conditions</a>
+		</p>
+	</div>
+</div>
+<script src="/combres/AliveChatTrackingJS/-1195764941/" type="text/javascript"></script>
+
+    <!-- End Footer //-->
+    
+    
+<script type="text/javascript">
+//&lt;![CDATA[
+var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_requiredSendValidator"), document.getElementById("ContentPlaceHolder1_minSendValidator"), document.getElementById("ContentPlaceHolder1_SendValidator"), document.getElementById("ContentPlaceHolder1_requiredCurrencyType"));
+//]]&gt;
+</script>
+
+<script type="text/javascript">
+//&lt;![CDATA[
+var ContentPlaceHolder1_requiredSendValidator = document.all ? document.all["ContentPlaceHolder1_requiredSendValidator"] : document.getElementById("ContentPlaceHolder1_requiredSendValidator");
+ContentPlaceHolder1_requiredSendValidator.controltovalidate = "ContentPlaceHolder1_txtAmount";
+ContentPlaceHolder1_requiredSendValidator.errormessage = "Please enter an amount.";
+ContentPlaceHolder1_requiredSendValidator.display = "Dynamic";
+ContentPlaceHolder1_requiredSendValidator.validationGroup = "priceCalculator";
+ContentPlaceHolder1_requiredSendValidator.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ContentPlaceHolder1_requiredSendValidator.initialvalue = "";
+var ContentPlaceHolder1_minSendValidator = document.all ? document.all["ContentPlaceHolder1_minSendValidator"] : document.getElementById("ContentPlaceHolder1_minSendValidator");
+ContentPlaceHolder1_minSendValidator.controltovalidate = "ContentPlaceHolder1_txtAmount";
+ContentPlaceHolder1_minSendValidator.display = "Dynamic";
+ContentPlaceHolder1_minSendValidator.type = "Currency";
+ContentPlaceHolder1_minSendValidator.decimalchar = ".";
+ContentPlaceHolder1_minSendValidator.groupchar = ",";
+ContentPlaceHolder1_minSendValidator.digits = "2";
+ContentPlaceHolder1_minSendValidator.groupsize = "3";
+ContentPlaceHolder1_minSendValidator.evaluationfunction = "RangeValidatorEvaluateIsValid";
+ContentPlaceHolder1_minSendValidator.maximumvalue = "9223372036854775807";
+ContentPlaceHolder1_minSendValidator.minimumvalue = "1";
+var ContentPlaceHolder1_SendValidator = document.all ? document.all["ContentPlaceHolder1_SendValidator"] : document.getElementById("ContentPlaceHolder1_SendValidator");
+ContentPlaceHolder1_SendValidator.controltovalidate = "ContentPlaceHolder1_txtAmount";
+ContentPlaceHolder1_SendValidator.display = "Dynamic";
+ContentPlaceHolder1_SendValidator.type = "Currency";
+ContentPlaceHolder1_SendValidator.decimalchar = ".";
+ContentPlaceHolder1_SendValidator.groupchar = ",";
+ContentPlaceHolder1_SendValidator.digits = "2";
+ContentPlaceHolder1_SendValidator.groupsize = "3";
+ContentPlaceHolder1_SendValidator.evaluationfunction = "RangeValidatorEvaluateIsValid";
+ContentPlaceHolder1_SendValidator.maximumvalue = "2999";
+ContentPlaceHolder1_SendValidator.minimumvalue = "-9223372036854775808";
+var ContentPlaceHolder1_requiredCurrencyType = document.all ? document.all["ContentPlaceHolder1_requiredCurrencyType"] : document.getElementById("ContentPlaceHolder1_requiredCurrencyType");
+ContentPlaceHolder1_requiredCurrencyType.controltovalidate = "ContentPlaceHolder1_ddCurrency";
+ContentPlaceHolder1_requiredCurrencyType.errormessage = "Please choose a currency";
+ContentPlaceHolder1_requiredCurrencyType.validationGroup = "priceCalculator";
+ContentPlaceHolder1_requiredCurrencyType.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ContentPlaceHolder1_requiredCurrencyType.initialvalue = "";
+//]]&gt;
+</script>
+
+
+<script type="text/javascript">
+//&lt;![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        var currencyCultureInfo="en-US";$("input[FormattableTextBox$='true']").blur(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b);if(typeof(Page_ClientValidate)!="undefined"){var c=$(a).attr("validgroup");Page_ClientValidate(c)}})});$("input[FormattableTextBox$='true']").change(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b);if(typeof(Page_ClientValidate)!="undefined"){var c=$(a).attr("validgroup");Page_ClientValidate(c)}})});$("input[FormattableTextBox$='true']").each(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b)})});
+                    
+                    
+
+                    function currencyFormatter_RequestHandler(sender, args)
+                    {
+                        
+                        var currencyFormatter_updatePanelElement = $('#'+sender._postBackSettings.panelID);                        
+                        var currencyCultureInfo="en-US";$("input[FormattableTextBox$='true']").blur(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b);if(typeof(Page_ClientValidate)!="undefined"){var c=$(a).attr("validgroup");Page_ClientValidate(c)}})});$("input[FormattableTextBox$='true']").change(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b);if(typeof(Page_ClientValidate)!="undefined"){var c=$(a).attr("validgroup");Page_ClientValidate(c)}})});$("input[FormattableTextBox$='true']").each(function(){var a="#"+$(this).attr("id");formatCurrencyString($(a).val(),currencyCultureInfo,function(b){$(a).val(b)})});
+
+                        return true;
+                    }
+
+                    Sys.WebForms.PageRequestManager.getInstance().add_endRequest(
+                        currencyFormatter_RequestHandler
+                    );
+
+                function formatCurrencyString(d,b,a){var c=new eWires.Services.WCF.AJAX.Formatter.NumericStringFormatter();c.CurrencyFormatNoCurrencySign(d,b,a,onFormatError)}function onFormatError(a){};WebForm_AutoFocus('ContentPlaceHolder1_btnEstimate');
+document.getElementById('ContentPlaceHolder1_requiredSendValidator').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_requiredSendValidator'));
+}
+
+document.getElementById('ContentPlaceHolder1_minSendValidator').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_minSendValidator'));
+}
+
+document.getElementById('ContentPlaceHolder1_SendValidator').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_SendValidator'));
+}
+
+document.getElementById('ContentPlaceHolder1_requiredCurrencyType').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_requiredCurrencyType'));
+}
+//]]&gt;
+</script>
+</form>
+    
+	</div>
+	
+
+		
+
+
+<script type="text/javascript" src="//tags.extole.com/414988/core.js"></script><img style="display: none;" src="https://www.pages01.net/WTS/event.jpeg?accesskey=764b7b33-13eadc43127-ce240116a00f91fcaa71fbe5df141a8a&amp;v=1.21&amp;isNewSession=1&amp;type=pageview&amp;isNewVisitor=1&amp;sessionGUID=6a1124e7-7146-bc68-3182-33db977a0436&amp;webSyncID=603044ad-353a-18c4-1006-396e9d2e1083&amp;url=https%3A%2F%2Fwww.riamoneytransfer.com%2FPricing%2FPriceCalculator.aspx&amp;newSiteVisit=1&amp;hostname=www.riamoneytransfer.com&amp;pathname=%2FPricing%2FPriceCalculator.aspx&amp;newPageVisit=1&amp;eventKey=868a1555-4ca9-4eba-d9ba-1783b0c29c7d" /><span class="button1388283886111" id="extole-placeholder-everywhere"><div class="extole1388283886111 cta-floater-ns1388283886111">
+	<div class="cta-floater1388283886111 standard1388283886111">
+		<a href="" class="cta-floater-state1388283886111 cta-floater-min1388283886111">Refer Friends</a>
+		<div href="" class="cta-floater-state1388283886111 cta-floater-standard1388283886111 shown1388283886111">Refer Friends, Get $10</div>
+		<div href="" class="cta-floater-state1388283886111 cta-floater-tickle1388283886111">
+			<p class="cfs-share1388283886111">Refer friends to Ria &amp; get a $10 Amazon.com Gift Card* for every friend that completes their first money transfer. </p>
+			<div class="cfs-button-container1388283886111">
+				<a href="" class="cfs-button1388283886111">Share Now</a>
+			</div>
+			<div class="disclaimer">
+				<p>*Restrictions apply. See program details.</p>
+			</div>
+		</div>
+
+		<!-- this is at the end so it'll go over everything. -->
+		<span class="close-button1388283886111 mini1388283886111">
+			<span class="content1388283886111">×</span>
+			<span class="cta-tickler-countdown1388283886111"></span>
+		</span>
+	</div>
+</div></span><div id="wsa_embed" style="overflow: hidden; z-index: 10000;" class="wsa_box plustransparentborder"></div></body></html>
